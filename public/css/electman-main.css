@@ -1,0 +1,103 @@
+/*
+ * Theme Name: Electman
+ * Author: wpsection
+ * Author URI: https://themeforest.net/user/wpsection
+ * Theme URI: http://z.commonsupport.com/electman/
+ * Description: This is Electricity and Electric Repaire with Events Lighting WordPress Theme
+ * Version: 2.0.0
+ * License: This theme or plugin is comprised of two parts.
+ * License URI: license.txt
+   Tags: blog, two-columns, left-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+   Text Domain: electman
+   Tested up to:5.7
+   Requires PHP:7
+*/
+.wp-caption {
+	margin-bottom: 2px;
+}
+
+.wp-caption-text {
+	margin-bottom: 5px;
+}
+
+.screen-reader-text {
+	margin-bottom: 12px;
+}
+
+.gallery-caption {
+	margin-bottom: 2px;
+}
+
+.bypostauthor {
+	margin-bottom: 2px;
+}
+
+.alignleft {
+	float: left;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	max-width: 100%;
+}
+
+.alignright {
+	float: right !important;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	max-width: 100%;
+}
+
+.aligncenter {
+	display: block;
+	margin: 0 auto 20px;
+}
+
+.col-md-4 .funfact-meta > i {
+	right: 27px;
+}
+
+.mycustom-pricing {
+	background-color: #090909 !important;
+}
+
+.on-hover {
+	display: none;
+	animation: fadeOut 0.5s;
+}
+
+.hver:hover .on-hover {
+	display: block;
+	animation: fadeIn 0.5s;
+}
+
+#wp-calendar caption {
+    text-align: center!important;
+    font-weight: 600!important;
+}
+.wp-calendar-nav{
+    padding: 20px;
+    background: #06202b;
+}
+.mrindex .tag-sticky-2 .lower-box,.mrindex .sticky .lower-box {
+    border: 1px solid red;
+}
+.banner-carousel .content-box .inner{
+    background: #0000004a!important;
+    padding: 40px!important;
+}
+.slide_text{
+    font-weight: 700!important;
+}
+.banner-carousel .active .content-box h1{
+	font-weight:500!important;
+}
+
+.enquiry-section .lower-text .info img {
+    width: 50px;
+}
+
+.blogsingle_thumb{
+	padding-bottom:20px;
+}
+.onepageheader .navigation {
+    padding-left: 50px;
+}

@@ -1,0 +1,88 @@
+<section class="elementor-section elementor-top-section elementor-element elementor-element-036d817 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="036d817" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+    <div class="elementor-container elementor-column-gap-no">
+        <div class="elementor-row">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9e1bee5" data-id="9e1bee5" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                <div class="elementor-column-wrap elementor-element-populated">
+                    <div class="elementor-widget-wrap">
+                        <div class="elementor-element elementor-element-4cee1ba elementor-widget elementor-widget-electman_h4_blog_title" data-id="4cee1ba" data-element_type="widget" data-widget_type="electman_h4_blog_title.default">
+                            <div class="elementor-widget-container">
+                                <section class="one news-section-two">
+                                    <div class="auto-container">
+                                        <div class="sec-title hydro-theme">
+                                            <div class="upper-text">
+                                                <span class="logo_bolt2">
+                                                    <%= image_tag '/img/bolt-1.gif', alt: '', title: '' %>
+                                                </span>
+                                                Hình Ảnh Thực Tế
+                                            </div>
+                                            <h2>Nhật Ký Công Việc</h2>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-174dadf elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="174dadf" data-element_type="section">
+    <div class="elementor-container elementor-column-gap-no">
+        <div class="elementor-row">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8b33363" data-id="8b33363" data-element_type="column">
+                <div class="elementor-column-wrap elementor-element-populated">
+                    <div class="elementor-widget-wrap">
+                        <div class="elementor-element elementor-element-44022bb elementor-widget elementor-widget-electman_gallery4" data-id="44022bb" data-element_type="widget" data-widget_type="electman_gallery4.default">
+                            <div class="elementor-widget-container">
+                                <section class="bkr003">
+                                    <div class=" gallery-7">
+                                        <div class="auto-container">
+                                            <div class="row">
+                                                <% (0..2).each do |diary| %>
+                                                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
+                                                        <div class="image-box">
+                                                            <figure class="image">
+                                                                <%= image_tag '/img/diary/nhat-ky-cong-viec-1-370x260.png' %>
+                                                            </figure>
+                                                            <div class="overlay-box">
+                                                                <%= link_to '<span class="icon flaticon-add"></span>'.html_safe, 
+                                                                    '/img/diary/nhat-ky-cong-viec-1-740x520.png', title: '', class: 'lightbox-image', data: {fancybox: 'gallery'} %>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
+                                                        <div class="image-box">
+                                                            <figure class="image">
+                                                                <%= image_tag '/img/diary/nhat-ky-cong-viec-2-370x260.png' %>
+                                                            </figure>
+                                                            <div class="overlay-box">
+                                                                <%= link_to '<span class="icon flaticon-add"></span>'.html_safe, 
+                                                                    '/img/diary/nhat-ky-cong-viec-2-740x520.png', title: '', class: 'lightbox-image', data: {fancybox: 'gallery'} %>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
+                                                        <div class="image-box">
+                                                            <figure class="image">
+                                                                <%= image_tag '/img/diary/nhat-ky-cong-viec-3-370x260.png' %>
+                                                            </figure>
+                                                            <div class="overlay-box">
+                                                                <%= link_to '<span class="icon flaticon-add"></span>'.html_safe, 
+                                                                    '/img/diary/nhat-ky-cong-viec-3-740x520.png', title: '', class: 'lightbox-image', data: {fancybox: 'gallery'} %>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <% end %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

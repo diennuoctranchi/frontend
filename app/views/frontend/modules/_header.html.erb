@@ -1,0 +1,155 @@
+<header class="main-header header-style-one inner-page-header">
+    <div class="header-top header-top-one">
+        <div class="auto-container">
+            <div class="inner clearfix">
+                <div class="top-left clearfix">
+                    <div class="top-text">
+                        Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Tại Biên Hòa
+                    </div>
+                </div>
+                <div class="top-right clearfix">
+                    <div class="email">
+                        <%= link_to 'Zalo Tư Vấn', '//zalo.me/0344319990', title: 'Zalo tư vấn', target: '_blank' %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-main-box">
+        <div class="auto-container">
+            <div class="inner-container">
+                <div class="upper-row clearfix">
+                    <div class="logo-box">
+                        <div class="logo">
+                            <%= link_to image_tag('/img/logo.png', alt: 'Logo Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, title: 'Logo Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe), 
+                                root_link, title: 'Logo Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe %>
+                        </div>
+                    </div>
+                    <div class="right-info clearfix">
+                        <div class="info clearfix">
+                            <div class="info-block">
+                                <div class="icon-box">
+                                    <span class="icon fa fa-phone"></span>
+                                </div>
+                                <strong>Điện Thoại</strong>
+                                <div class="info-text">
+                                    <%= link_to '0344 319 990', 'tel:0344319990', title: '0344 319 990' %>
+                                </div>
+                            </div>
+                            <div class="info-block">
+                                <div class="icon-box">
+                                    <span class="icon fa fa-home"></span>
+                                </div>
+                                <strong>Địa Chỉ</strong>
+                                <div class="info-text">
+                                    <%= link_to 'E45 Tổ 26, KP.3, Long Bình Tân, TP. Biên Hòa, Đồng Nai', contact_us_link, title: 'E45 Tổ 26, KP.3, Long Bình Tân, TP. Biên Hòa, Đồng Nai' %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lower-row">
+                    <div class="nav-box clearfix">
+                        <div class="nav-outer clearfix">
+                            <div class="mobile-nav-toggler"><span class="icon flaticon-menu-1"></span></div>
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                    <ul class="mrhome navigation clearfix">
+                                        <li class="mrli">
+                                            <%= link_to '', root_link, title: 'Điện Nước Trần Chí &#8211; Sửa Chữa Điện Nước, Máy Lọc Nước Tại Biên Hòa'.html_safe, class: 'homebttn' %>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                            <%= link_to 'Giới Thiệu', about_us_link, title: 'Giới thiệu', data: {scroll: '', options: 'easing:easeOutQuart'}, class: 'hvr-underline-from-left1' %>
+                                        </li>
+                                        <% @service_categories.each do |service_category| %>
+                                            <% if service_category.children.count > 0 %>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown">
+                                                    <%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name, data: {toggle: 'dropdown1', scroll: '', options: 'easing:easeOutQuart'}, aria: {expanded: false}, class: 'hvr-underline-from-left1' %>
+                                                    <ul role="menu" class="submenu">
+                                                        <% service_category.get_children_categories.each do |child_service_category| %>
+                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                                                <%= link_to child_service_category.get_name, service_list_link(child_service_category), title: child_service_category.get_name %>
+                                                            </li>
+                                                        <% end %>
+                                                    </ul>
+                                                </li>
+                                            <% else %>
+                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                                    <%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name, data: {scroll: '', options: 'easing:easeOutQuart'}, class: 'hvr-underline-from-left1' %>
+                                                </li>
+                                            <% end %>
+                                        <% end %>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown">
+                                            <%= link_to 'Tin Tức', blog_list_link, title: 'Tin tức', data: {toggle: 'dropdown1', scroll: '', options: 'easing:easeOutQuart'}, aria: {expanded: false}, class: 'hvr-underline-from-left1' %>
+                                            <ul role="menu" class="submenu">
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                                    <%= link_to 'Chia sẻ kinh nghiệm', blog_list_link, title: 'Chia sẻ kinh nghiệm' %>
+                                                </li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                                    <%= link_to 'Nhật ký công việc', diary_link, title: 'Nhật ký công việc' %>
+                                                </li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                                    <%= link_to 'Câu hỏi thường gặp', faq_link, title: 'Câu hỏi thường gặp' %>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                            <%= link_to 'Liên Hệ', contact_us_link, title: 'Liên hệ', data: {scroll: '', options: 'easing:easeOutQuart'}, class: 'hvr-underline-from-left1' %>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="search-btn">
+                            <button type="button" class="theme-btn search-toggler"><span class="fa fa-search"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sticky-header">
+        <div class="auto-container clearfix">
+            <div class="logo-sticky">
+                <%= link_to image_tag('/img/logo.png', alt: 'Logo Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, title: 'Logo Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe), 
+                    root_link, title: 'Logo Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe %>
+            </div>
+            <div class="pull-right">
+                <nav class="main-menu clearfix"></nav>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn"><span class="icon flaticon-cancel"></span></div>
+        <nav class="menu-box">
+            <div class="nav-logo">
+                <%= link_to image_tag('/img/logo.png', alt: 'Logo Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, title: 'Logo Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe), 
+                    root_link, title: 'Logo Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe %>
+            </div>
+            <div class="menu-outer"></div>
+            <ul class="social-links clearfix">
+                <li>
+                    <%= link_to '<span class="fab fab fa-facebook-f"></span>'.html_safe, 
+                        '', title: 'FaceBook Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
+                </li>
+                <li>
+                    <%= link_to '<span class="fab fab fa-twitter"></span>'.html_safe, 
+                        '', title: 'Twitter Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
+                </li>
+                <li>
+                    <%= link_to '<span class="fab fab fa-instagram"></span>'.html_safe, 
+                        '', title: 'Instagram Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
+                </li>
+                <li>
+                    <%= link_to '<span class="fab fab fa-linkedin-in"></span>'.html_safe, 
+                        '', title: 'LinkedIn Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
+                </li>
+                <li>
+                    <%= link_to '<span class="fab fab fa-pinterest-p"></span>'.html_safe, 
+                        '', title: 'Pinterest Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

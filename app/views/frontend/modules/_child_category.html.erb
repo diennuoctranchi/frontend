@@ -1,0 +1,52 @@
+<section class="elementor-section elementor-top-section elementor-element elementor-element-f6b960a elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="f6b960a" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+    <div class="elementor-container elementor-column-gap-no">
+        <div class="elementor-row">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9b33d95" data-id="9b33d95" data-element_type="column">
+                <div class="elementor-column-wrap elementor-element-populated">
+                    <div class="elementor-widget-wrap">
+                        <div class="elementor-element elementor-element-41bcf05 elementor-widget elementor-widget-electman_service_icon" data-id="41bcf05" data-element_type="widget" data-widget_type="electman_service_icon.default">
+                            <div class="elementor-widget-container">
+                                <section class="two services-section-three">
+                                    <div class="circle-one1"></div>
+                                    <div class="auto-container">
+                                        <div class="sec-title bio-theme centered">
+                                            <div class="upper-text">
+                                                <span class="logo_bolt2">
+                                                    <%= image_tag '/img/bolt-1.gif', alt: '', title: '' %>
+                                                </span>
+                                                <%= title_1 %>
+                                            </div>
+                                            <h2><%= title_2 %></h2>
+                                        </div>
+                                        <div class="row clearfix">
+                                            <% parent_service_category.children.each do |service_category| %>
+                                                <div class="service-block-four col-lg-4 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="0ms"  data-wow-duration="2000ms">
+                                                    <div class="inner-box">
+                                                        <div class="icon-box">
+                                                            <%= image_tag '/img/icons/039-tools-and-utensils-1.png', alt: '', title: '' %>
+                                                        </div>
+                                                        <div class="lower-box">
+                                                            <div class="title">
+                                                                <h3><%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name %></h3>
+                                                                <% if service_category.meta_description.present? %>
+                                                                    <div class="subtitle"><%= service_category.meta_description %></div>
+                                                                <% end %>
+                                                            </div>
+                                                        </div>
+                                                        <div class="link-box">
+                                                            <%= link_to '<span class="txt">Xem Chi Tiết</span><span class="icon flaticon-arrows-11"></span>'.html_safe, service_list_link(service_category), title: service_category.get_name %>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <% end %>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

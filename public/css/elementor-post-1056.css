@@ -1,0 +1,45 @@
+.elementor-1056 .elementor-element.elementor-element-fcf3f99:not(.elementor-motion-effects-element-type-background),
+.elementor-1056 .elementor-element.elementor-element-fcf3f99>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+	background-color: #06202B;
+}
+
+.elementor-1056 .elementor-element.elementor-element-fcf3f99>.elementor-background-overlay {
+	opacity: 1;
+	transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.elementor-1056 .elementor-element.elementor-element-fcf3f99 {
+	transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+	padding: 20px 0px 0px 0px;
+}
+
+.elementor-1056 .elementor-element.elementor-element-bd7cedc {
+	z-index: 9;
+}
+
+@media(min-width:768px) {
+	.elementor-1056 .elementor-element.elementor-element-4bd181d {
+		width: 33.158%;
+	}
+	.elementor-1056 .elementor-element.elementor-element-3893e2e {
+		width: 21.228%;
+	}
+	.elementor-1056 .elementor-element.elementor-element-31b91c2 {
+		width: 20.57%;
+	}
+}
+
+@media(max-width:1024px) and (min-width:768px) {
+	.elementor-1056 .elementor-element.elementor-element-4bd181d {
+		width: 100%;
+	}
+	.elementor-1056 .elementor-element.elementor-element-3893e2e {
+		width: 100%;
+	}
+	.elementor-1056 .elementor-element.elementor-element-31b91c2 {
+		width: 100%;
+	}
+	.elementor-1056 .elementor-element.elementor-element-e6c04bf {
+		width: 100%;
+	}
+}

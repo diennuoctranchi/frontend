@@ -1,0 +1,77 @@
+<section class="page-banner">
+    <div class="image-layer" style="background-image:url(/img/bg-breadcrumb.jpg);"></div>
+    <div class="auto-container">
+        <h1>Chia Sẻ Kinh Nghiệm</h1>
+        <div class="breadcrumb-box">
+            <div class="auto-container">
+                <ul class="bread-crumb clearfix">
+                    <li class="breadcrumb-item">
+                        <%= link_to 'Trang Chủ', root_link, title: 'Điện Nước Trần Chí &#8211; Thợ sửa điện nước tại Biên Hòa'.html_safe %>
+                    </li>
+                    <li class="breadcrumb-item">Chia Sẻ Kinh Nghiệm</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="sidebar-page-container mrindex">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 side_right">
+                <%= render partial: '/frontend/blog/sidebar' %>
+            </div>
+            <div class="content-side col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                <% (0..2).each do |blog| %>
+                    <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-h4-blog-right tag-manufacture tag-products">
+                        <div class="news-block-four">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image">
+                                        <%= link_to image_set_tag('/img/tmp/video-gallery-2-1.jpg',
+                                                                    {
+                                                                    '/img/tmp/video-gallery-2-1.jpg' => '970w',
+                                                                    '/img/tmp/video-gallery-2-1.jpg' => '768w',
+                                                                    '/img/tmp/video-gallery-2-1.jpg' => '600w',
+                                                                    '/img/tmp/video-gallery-2-1.jpg' => '300w'
+                                                                    },
+                                                                    title: '', alt: '', size: '770x300', sizes: '(max-width: 970px) 100vw, 970px', loading: 'lazy', class: 'attachment-post-thumbnail size-post-thumbnail wp-post-image'),
+                                            blog_detail_link, title: '' %>
+                                    </figure>
+                                    <div class="post-date">
+                                        <span class="day">26</span>
+                                        <span class="month">10</span>
+                                    </div>
+                                </div>
+                                <div class="lower-box">
+                                    <div class="meta-info home_post">
+                                        <ul class="blog-one__meta list-unstyled">
+                                            <li><%= link_to '<span class="fa fa-user"></span> Điện Nước Trần Chí'.html_safe, '', title: '' %></li>
+                                            <li><span class="fa fa-comments"></span>0 Bình luận</li>
+                                        </ul>
+                                    </div>
+                                    <h3><%= link_to 'Thợ sửa điện nước Biên Hòa, Đồng Nai', blog_detail_link, title: '' %></h3>
+                                    <div class="text text-justify">
+                                        <p>Thợ sửa điện nước Biên Hòa, Đồng Nai Thợ sửa điện nước Trần Chí cung cấp dịch vụ sửa điện nước tại nhà đảm bảo chất lượng, uy tín. Chỉ cần gọi Hotline: 0344 319 990 | 0394 850 149 là thợ sẽ có mặt, kiểm tra báo giá [&hellip;]</p>
+                                    </div>
+                                    <div class="lower-row clearfix">
+                                        <div class="link-box">
+                                            <%= link_to '<span class="txt">ĐỌC TIẾP</span> <span class="icon flaticon-arrows-11"></span>'.html_safe, blog_detail_link, title: '' %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+                <div class="post-pagination">
+                    <ul class="pagination">
+                        <li><span class="page-numbers current">1</span></li>
+                        <li><a class="page-numbers" href="">2</a></li>
+                        <li><a class="page-numbers" href="">3</a></li>
+                        <li><a class="next page-numbers" href="">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
