@@ -17,32 +17,33 @@
                                                             <div class="footer-column col-lg-12">
                                                                 <div class="footer-widget about-widget">
                                                                     <div class="footer-logo-box">
-                                                                        <%= link_to image_tag('/img/logo-white.png', alt: '', title: 'Logo Điện Nước Trần Chí - DienNuocTranChi.Com'), root_link, title: 'Logo Điện Nước Trần Chí - DienNuocTranChi.Com' %>
+                                                                        <%= link_to image_tag('/img/logo-white.png', alt: 'Logo Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, title: 'Logo Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe), 
+                                                                            root_link, title: 'Logo Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe %>
                                                                     </div>
                                                                     <div class="about-text text-justify">
-                                                                        <strong>Điện Nước Trần Chí</strong> tự hào là đơn vị chuyên cung cấp các dịch vụ lắp đặt sửa chữa điện nước tại TP. Biên Hòa, Đồng Nai. Đơn vị sửa chữa điện nước uy tín, được nhiều khách hàng đánh giá cao.
+                                                                        <strong><%= link_to 'Điện Nước Trần Chí', root_link, title: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe %></strong> tự hào là đơn vị chuyên cung cấp các dịch vụ lắp đặt, bảo trì và sửa chữa điện nước; lắp đặt, thay lõi, máy lọc nước; dịch vụ điện lạnh; dịch vụ sửa chữa nhà ở tại khu vực TP. Biên Hòa và huyện Trảng Bom thuộc tỉnh Đồng Nai.
                                                                     </div>
                                                                     <div class="footer-social">
                                                                         <ul class="footer-social-two clearfix">
                                                                             <li>
-                                                                                <%= link_to '<span class="fab fab fa-facebook-f"></span>'.html_safe, 
-                                                                                    '', title: '', rel: 'noopener' %>
+                                                                                <%= link_to '<span class="fab fa-facebook-f"></span>'.html_safe, 
+                                                                                    '', title: 'FaceBook Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
                                                                             </li>
                                                                             <li>
-                                                                                <%= link_to '<span class="fab fab fa-twitter"></span>'.html_safe, 
-                                                                                    '', title: '', rel: 'noopener' %>
+                                                                                <%= link_to '<span class="fab fa-twitter"></span>'.html_safe, 
+                                                                                    '', title: 'Twitter Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
                                                                             </li>
                                                                             <li>
-                                                                                <%= link_to '<span class="fab fab fa-instagram"></span>'.html_safe, 
-                                                                                    '', title: '', rel: 'noopener' %>
+                                                                                <%= link_to '<span class="fab fa-reddit"></span>'.html_safe, 
+                                                                                    '', title: 'Reddit Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
                                                                             </li>
                                                                             <li>
-                                                                                <%= link_to '<span class="fab fab fa-linkedin-in"></span>'.html_safe, 
-                                                                                    '', title: '', rel: 'noopener' %>
+                                                                                <%= link_to '<span class="fab fa-linkedin-in"></span>'.html_safe, 
+                                                                                    '', title: 'LinkedIn Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
                                                                             </li>
                                                                             <li>
-                                                                                <%= link_to '<span class="fab fab fa-pinterest-p"></span>'.html_safe, 
-                                                                                    '', title: '', rel: 'noopener' %>
+                                                                                <%= link_to '<span class="fab fa-pinterest-p"></span>'.html_safe, 
+                                                                                    '', title: 'Pinterest Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
                                                                             </li>
                                                                         </ul>
                                                                     </div>
@@ -71,18 +72,22 @@
                                                                     <div class="footer-column col-lg-12">
                                                                         <div class="footer-widget links-widget">
                                                                             <div class="widget-title">
-                                                                                <h3>Dịch Vụ Điện Nước</h3>
+                                                                                <h3>Thợ Điện Nước</h3>
                                                                             </div>
                                                                             <div class="widget-content">
                                                                                 <ul>
-                                                                                    <li><%= link_to 'Sửa chữa điện 1 pha, 3 pha', '', title: '' %></li>
-                                                                                    <li><%= link_to 'Sửa chữa máy bơm nước', '', title: '' %></li>
-                                                                                    <li><%= link_to 'Vệ sinh bồn nước', '', title: '' %></li>
-                                                                                    <li><%= link_to 'Lắp đặt, hàn ống PPR', '', title: '' %></li>
-                                                                                    <li><%= link_to 'Lắp đặt quạt trần, quạt hút', '', title: '' %></li>
-                                                                                    <li><%= link_to 'Lắp đặt điện trong nhà', '', title: '' %></li>
-                                                                                    <li><%= link_to 'Chống thấm nhà vệ sinh', '', title: '' %></li>
-                                                                                    <li><%= link_to 'Sửa chữa, thay thế vòi nước', '', title: '' %></li>
+                                                                                    <li><%= link_to 'Thợ sửa điện nước', '', title: 'Thợ sửa điện nước tại nhà TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Thợ sửa ống nước', '', title: 'Thợ sửa ống nước tại nhà TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Dò tìm rò rỉ nước', '', title: 'Dò tìm rò rỉ nước tại nhà TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Thợ sửa máy bơm nước', '', title: 'Thợ sửa máy bơm nước tại nhà TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Thợ sửa máy bơm tăng áp', '', title: 'Thợ sửa máy bơm tăng áp tại nhà TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Dịch vụ thông cống nghẹt', '', title: 'Dịch vụ thông cống nghẹt tại nhà TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Dịch vụ vệ sinh bồn nước', '', title: 'Dịch vụ vệ sinh bồn nước tại nhà TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Thợ thông cầu cống nghẹt', '', title: 'Thợ thông cầu cống nghẹt tại nhà TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Thợ lắp đặt đồng hồ điện', '', title: 'Thợ lắp đặt đồng hồ điện tại nhà TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Thi công điện nước', '', title: 'Báo giá thi công điện nước tận nơi tại TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Lắp đặt, sửa chữa tủ điện', '', title: 'Lắp đặt, sửa chữa tủ điện 1 pha, 3 pha tại TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Sửa chữa phao cơ, phao điện', '', title: 'Báo giá sửa chữa phao cơ, phao điện tại nhà TP. Biên Hòa' %></li>
                                                                                 </ul>
                                                                             </div>
                                                                         </div>
@@ -112,17 +117,37 @@
                                                                     <div class="footer-column col-lg-12">
                                                                         <div class="footer-widget links-widget">
                                                                             <div class="widget-title">
-                                                                                <h3>Dịch Vụ Điện Lạnh</h3>
+                                                                                <h3>Máy Lọc Nước</h3>
                                                                             </div>
                                                                             <div class="widget-content">
                                                                                 <ul>
-                                                                                    <li><%= link_to 'Vệ sinh máy lạnh', '', title: '' %></li>
-                                                                                    <li><%= link_to 'Lắp đặt máy lạnh', '', title: '' %></li>
-                                                                                    <li><%= link_to 'Sửa chữa máy lạnh', '', title: '' %></li>
-                                                                                    <li><%= link_to 'Lắp đặt máy giặt', '', title: '' %></li>
-                                                                                    <li><%= link_to 'Lắp đặt tủ lạnh', '', title: '' %></li>
-                                                                                    <li><%= link_to 'Lắp đặt máy lọc nước', '', title: '' %></li>
-                                                                                    <li><%= link_to 'Sửa chữa máy lọc nước', '', title: '' %></li>
+                                                                                    <li><%= link_to 'Lắp đặt máy lọc nước', '', title: 'Lắp đặt máy lọc nước tại nhà TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Thay lõi máy lọc nước', '', title: 'Thay lõi máy lọc nước tại nhà TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Sửa chữa máy lọc nước', '', title: 'Sửa chữa máy lọc nước tại nhà TP. Biên Hòa' %></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="footer-widget links-widget">
+                                                                            <div class="widget-title cus-footer">
+                                                                                <h3>Thợ Điện Lạnh</h3>
+                                                                            </div>
+                                                                            <div class="widget-content">
+                                                                                <ul>
+                                                                                    <li><%= link_to 'Lắp đặt máy lạnh', '', title: 'Lắp đặt máy lạnh tại nhà TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Vệ sinh máy lạnh', '', title: 'Vệ sinh máy lạnh tại nhà TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Sửa chữa máy lạnh', '', title: 'Sửa chữa máy lạnh tại nhà TP. Biên Hòa' %></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="footer-widget links-widget">
+                                                                            <div class="widget-title cus-footer">
+                                                                                <h3>Thợ Sửa Nhà</h3>
+                                                                            </div>
+                                                                            <div class="widget-content">
+                                                                                <ul>
+                                                                                    <li><%= link_to 'Thợ chống thấm', '', title: 'Thợ chống thấm tại nhà TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Thợ thạch cao', '', title: 'Thợ thạch cao tại nhà TP. Biên Hòa' %></li>
+                                                                                    <li><%= link_to 'Thợ sơn nước', '', title: 'Thợ sơn nước tại nhà TP. Biên Hòa' %></li>
                                                                                 </ul>
                                                                             </div>
                                                                         </div>
@@ -156,42 +181,44 @@
                                                                         <div class="info-block">
                                                                             <div class="icon-box">
                                                                                 <span class="icon">
-                                                                                    <%= image_tag '/img/icons/icon-message.png', alt: '', title: '' %>
+                                                                                    <%= image_tag '/img/icons/icon-message.png', alt: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe, title: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe %>
                                                                                 </span>
                                                                             </div>
-                                                                            <strong>Địa chỉ</strong>
-                                                                            <div class="info-text">E45 Tổ 26, KP.3, Long Bình Tân, Thành phố Biên Hòa, Đồng Nai</div>
-                                                                        </div>
-                                                                        <div class="info-block">
-                                                                            <div class="icon-box">
-                                                                                <span class="icon">
-                                                                                    <%= image_tag '/img/icons/icon-call.png', alt: '', title: '' %>
-                                                                                </span>
-                                                                            </div>
-                                                                            <strong>Điện thoại</strong>
+                                                                            <strong>Địa Chỉ</strong>
                                                                             <div class="info-text">
-                                                                                <%= link_to '0344 319 990', 'tel:0344319990', title: '' %> | <%= link_to '0394 850 149', 'tel:0394850149', title: '' %>
+                                                                                <%= link_to 'E45 Tổ 26, KP.3, Long Bình Tân, TP. Biên Hòa, Tỉnh Đồng Nai', '', title: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe, target: '_blank', rel: 'noopener' %>
                                                                             </div>
                                                                         </div>
                                                                         <div class="info-block">
                                                                             <div class="icon-box">
                                                                                 <span class="icon">
-                                                                                    <%= image_tag '/img/icons/icon-zalo.png', alt: '', title: '' %>
+                                                                                    <%= image_tag '/img/icons/icon-call.png', alt: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe, title: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe %>
                                                                                 </span>
                                                                             </div>
-                                                                            <strong>Liên kết Zalo</strong>
+                                                                            <strong>Điện Thoại</strong>
                                                                             <div class="info-text">
-                                                                                <%= link_to 'Zalo tư vấn, đặt lịch sửa chữa', '//zalo.me/0344319990', title: '' %>
+                                                                                <%= link_to '0344 319 990', 'tel:0344319990', title: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe %> | <%= link_to '0394 850 149', 'tel:0394850149', title: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe %>
                                                                             </div>
                                                                         </div>
                                                                         <div class="info-block">
                                                                             <div class="icon-box">
                                                                                 <span class="icon">
-                                                                                    <%= image_tag '/img/icons/icon-mail.png', alt: '', title: '' %>
+                                                                                    <%= image_tag '/img/icons/icon-zalo.png', alt: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe, title: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe %>
                                                                                 </span>
                                                                             </div>
-                                                                            <strong>Email</strong>
-                                                                            <div class="info-text"><%= mail_to 'diennuoctranchi@gmail.com', 'diennuoctranchi@gmail.com', title: '' %></div>
+                                                                            <strong>Liên Kết Zalo</strong>
+                                                                            <div class="info-text">
+                                                                                <%= link_to 'Tư vấn & Đặt lịch sửa chữa', '//zalo.me/0344319990', title: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe %>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="info-block">
+                                                                            <div class="icon-box">
+                                                                                <span class="icon">
+                                                                                    <%= image_tag '/img/icons/icon-mail.png', alt: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe, title: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe %>
+                                                                                </span>
+                                                                            </div>
+                                                                            <strong>Email Liên Hệ</strong>
+                                                                            <div class="info-text"><%= mail_to 'diennuoctranchi@gmail.com', 'diennuoctranchi@gmail.com', title: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe %></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -221,13 +248,14 @@
                                                     <div class="auto-container">
                                                         <div class="inner clearfix">
                                                             <div class="copyright">
-                                                                Copyright 2021 &copy; <%= link_to '<strong>Điện Nước Trần Chí</strong>'.html_safe, root_link, title: 'Điện Nước Trần Chí - Thợ sửa chữa điện nước, điện lạnh tại Biên Hòa' %>. All rights reserved.
+                                                                Copyright <%= Time.zone.now.year %> &copy; <%= link_to '<strong>Điện Nước Trần Chí</strong>'.html_safe, root_link, title: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe %>. All rights reserved.
                                                             </div>
                                                             <div class="footer-nav">
                                                                 <ul class="clearfix">
-                                                                    <li><%= link_to 'Sửa chữa điện nước tại Biên Hòa', '', title: '' %></li>
-                                                                    <li><%= link_to 'Thợ sửa điện nước tại Biên Hòa', '', title: '' %></li>
-                                                                    <li><%= link_to 'Sửa máy lọc nước tại Biên Hòa', '', title: '' %></li>
+                                                                    <li><%= link_to 'Thợ điện nước', '', title: 'Thợ điện nước tại nhà TP. Biên Hòa' %></li>
+                                                                    <li><%= link_to 'Máy lọc nước', '', title: 'Lắp đặt, sửa chữa, thay lõi máy lọc nước tại nhà TP. Biên Hòa' %></li>
+                                                                    <li><%= link_to 'Thợ điện lạnh', '', title: 'Lắp đặt, sửa chữa, thay lõi máy lọc nước tại nhà TP. Biên Hòa' %></li>
+                                                                    <li><%= link_to 'Thợ sửa nhà', '', title: 'Thợ sửa nhà tại nhà TP. Biên Hòa' %></li>
                                                                 </ul>
                                                             </div>
                                                         </div>

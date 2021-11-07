@@ -11,9 +11,9 @@
                                         <div class="sec-title hydro-theme">
                                             <div class="upper-text">
                                                 <span class="logo_bolt2">
-                                                    <%= image_tag '/img/bolt-1.gif', alt: '', title: '' %>
+                                                    <%= image_tag '/img/bolt.gif', alt: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe, title: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe %>
                                                 </span>
-                                                Hình Ảnh Thực Tế
+                                                Điện Nước Trần Chí
                                             </div>
                                             <h2>Nhật Ký Công Việc</h2>
                                         </div>
@@ -39,37 +39,18 @@
                                     <div class=" gallery-7">
                                         <div class="auto-container">
                                             <div class="row">
-                                                <% (0..2).each do |diary| %>
+                                                <% @diaries.each do |diary| %>
                                                     <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
                                                         <div class="image-box">
                                                             <figure class="image">
-                                                                <%= image_tag '/img/diary/nhat-ky-cong-viec-1-370x260.png' %>
+                                                                <%= image_set_tag(diary.diary_image,
+                                                                    {diary.diary_image(:detail_370x260) => '370w',
+                                                                     diary.diary_image(:detail_740x520) => '740w'},
+                                                                    title: diary.get_name, alt: diary.get_name, size: '370x260', sizes: '(max-width: 370px) 100vw, 40px', loading: '370px', class: 'attachment-post-thumbnail size-post-thumbnail wp-post-image') %>
                                                             </figure>
                                                             <div class="overlay-box">
                                                                 <%= link_to '<span class="icon flaticon-add"></span>'.html_safe, 
-                                                                    '/img/diary/nhat-ky-cong-viec-1-740x520.png', title: '', class: 'lightbox-image', data: {fancybox: 'gallery'} %>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
-                                                        <div class="image-box">
-                                                            <figure class="image">
-                                                                <%= image_tag '/img/diary/nhat-ky-cong-viec-2-370x260.png' %>
-                                                            </figure>
-                                                            <div class="overlay-box">
-                                                                <%= link_to '<span class="icon flaticon-add"></span>'.html_safe, 
-                                                                    '/img/diary/nhat-ky-cong-viec-2-740x520.png', title: '', class: 'lightbox-image', data: {fancybox: 'gallery'} %>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
-                                                        <div class="image-box">
-                                                            <figure class="image">
-                                                                <%= image_tag '/img/diary/nhat-ky-cong-viec-3-370x260.png' %>
-                                                            </figure>
-                                                            <div class="overlay-box">
-                                                                <%= link_to '<span class="icon flaticon-add"></span>'.html_safe, 
-                                                                    '/img/diary/nhat-ky-cong-viec-3-740x520.png', title: '', class: 'lightbox-image', data: {fancybox: 'gallery'} %>
+                                                                    diary.diary_image(:detail_740x520), title: diary.get_name, class: 'lightbox-image', data: {fancybox: 'gallery'} %>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -1,49 +1,26 @@
 <div class="sidebar-wrapper">
-    <div class="mrsidebar widget sidebar-widget single-sidebar widget_categories">
-        <div class="widget-title">
-            <span class="logo_bolt2">
-                <%= image_tag '/img/bolt.gif', alt: '', title: '' %>
-            </span>
-            <h3>Dịch Vụ Điện Nước</h3>
+    <% @service_categories.each do |service_category| %>
+        <div class="mrsidebar widget sidebar-widget single-sidebar widget_categories">
+            <div class="widget-title">
+                <span class="logo_bolt2">
+                    <%= image_tag '/img/bolt.gif', alt: service_category.get_name, title: service_category.get_name %>
+                </span>
+                <h3><%= service_category.get_name %></h3>
+            </div>
+            <ul>
+                <% service_category.children.get_active.each do |children_service_category| %>
+                    <li class="cat-item">
+                        <% if children_service_category.services.count == 1 %>
+                            <% service = children_service_category.services.first %>
+                            <%= link_to children_service_category.get_name, service_detail_link(service), title: children_service_category.get_name %>
+                        <% else %>
+                            <%= link_to children_service_category.get_name, service_list_link(children_service_category), title: children_service_category.get_name %>
+                        <% end %>
+                    </li>
+                <% end %>
+            </ul>
         </div>
-        <ul>
-            <% (0..4).each do |service| %>
-                <li class="cat-item">
-                    <%= link_to 'Sửa chữa điện nước', '', title: '' %>
-                </li>
-            <% end %>
-        </ul>
-    </div>
-    <div class="mrsidebar widget sidebar-widget single-sidebar widget_categories">
-        <div class="widget-title">
-            <span class="logo_bolt2">
-                <%= image_tag '/img/bolt.gif', alt: '', title: '' %>
-            </span>
-            <h3>Dịch Vụ Điện Lạnh</h3>
-        </div>
-        <ul>
-            <% (0..4).each do |service| %>
-                <li class="cat-item">
-                    <%= link_to 'Sửa chữa máy lọc nước', '', title: '' %>
-                </li>
-            <% end %>
-        </ul>
-    </div>
-    <div class="mrsidebar widget sidebar-widget single-sidebar widget_categories">
-        <div class="widget-title">
-            <span class="logo_bolt2">
-                <%= image_tag '/img/bolt.gif', alt: '', title: '' %>
-            </span>
-            <h3>Dịch Vụ Sửa Nhà</h3>
-        </div>
-        <ul>
-            <% (0..4).each do |service| %>
-                <li class="cat-item">
-                    <%= link_to 'Thợ thạch cao', '', title: '' %>
-                </li>
-            <% end %>
-        </ul>
-    </div>
+    <% end %>
     <div class="mrsidebar widget sidebar-widget single-sidebar widget_tag_cloud">
         <div class="widget-title">
             <span class="logo_bolt2">

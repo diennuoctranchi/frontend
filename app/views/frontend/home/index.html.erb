@@ -3,8 +3,11 @@
         <div class="elementor-section-wrap">
             <%= render partial: '/frontend/home/sliders' %>
             <%= render partial: '/frontend/home/about' %>
-            <%= render partial: '/frontend/home/services' %>
-            <%= render partial: '/frontend/home/services' %>
+            <% @service_categories.each do |service_category| %>
+                <% if service_category.children.count > 0 %>
+                    <%= render '/frontend/modules/child_category', title_1: 'Điện Nước Trần Chí', title_2: service_category.get_name, list_category: service_category.children.get_active.limit(6) %>
+                <% end %>
+            <% end %>
             <%= render partial: '/frontend/home/diary' %>
             <%= render partial: '/frontend/home/brands' %>
         </div>

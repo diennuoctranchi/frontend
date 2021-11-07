@@ -30,9 +30,14 @@
                                         <h3><%= @parent_service_category.get_name %></h3>
                                     </div>
                                     <ul>
-                                        <% @parent_service_category.children.each do |service_category| %>
+                                        <% @parent_service_category.children.get_active.each do |service_category| %>
                                             <li class="cat-item">
-                                                <%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name %>
+                                                <% if service_category.services.count == 1 %>
+                                                    <% service = service_category.services.first %>
+                                                    <%= link_to service_category.get_name, service_detail_link(service), title: service_category.get_name %>
+                                                <% else %>
+                                                    <%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name %>
+                                                <% end %>
                                             </li>
                                         <% end %>
                                     </ul>
@@ -105,74 +110,7 @@
                     </div>
                 </div>
             </section>
-            <% if @parent_service_category.children.count > 0 %>
-                <%= render '/frontend/modules/child_category', title_1: 'Điện Nước Trần Chí', title_2: @parent_service_category.get_name, parent_service_category: @parent_service_category %>
-            <% end %>
-            <section class="elementor-section elementor-top-section elementor-element elementor-element-5161903 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="5161903" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
-                <div class="elementor-container elementor-column-gap-no">
-                    <div class="elementor-row">
-                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bb755df" data-id="bb755df" data-element_type="column">
-                            <div class="elementor-column-wrap elementor-element-populated">
-                                <div class="elementor-widget-wrap">
-                                    <div class="elementor-element elementor-element-63785d1 elementor-widget elementor-widget-electman_service_img2" data-id="63785d1" data-element_type="widget" data-widget_type="electman_service_img2.default">
-                                        <div class="elementor-widget-container">
-                                            <section class=" services-section-two">
-                                                <div class="pattern-images">
-                                                    <div class="pattern-image-right">
-                                                        <%= image_tag '/img/tmp/faded-image-1-1.jpeg', alt: '', title: '' %>
-                                                    </div>
-                                                    <div class="pattern-image-left">
-                                                        <%= image_tag '/img/tmp/faded-image-2-1.jpeg', alt: '', title: '' %>
-                                                    </div>
-                                                </div>
-                                                <div class="auto-container">
-                                                    <div class="sec-title-two wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1200ms">
-                                                        <h3>
-                                                            <span class="logo_bolt2">
-                                                                <%= image_tag '/img/bolt-1.gif', alt: '', title: '' %>
-                                                            </span>
-                                                            Dịch Vụ Thường Gặp
-                                                            <span class="shadow_text2">DỊCH VỤ</span>
-                                                        </h3>
-                                                        <h2>Dịch Vụ Điện Nước Được Yêu Cầu Nhiều Nhất</h2>
-                                                    </div>
-                                                    <div class="services-carousel strnix-carousel owl-theme owl-carousel" data-options='{"loop": true, "margin": 30, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 6000, "smartSpeed": 500, "responsive":{ "0" :{ "items": "1" }, "600" :{ "items" : "1" }, "768" :{ "items" : "2" }, "800":{ "items" : "2" }, "1024":{ "items" : "2" }, "1200":{ "items" : "3" }}}'>
-                                                        <% (0..5).each do |service| %>
-                                                            <div class="service-block-three">
-                                                                <div class="inner-box">
-                                                                    <div class="image-box">
-                                                                        <figure class="image">
-                                                                            <%= image_tag '/img/tmp/2-2-1.jpeg', alt: '', title: '' %>
-                                                                        </figure>
-                                                                        <%= link_to '<span class="icon flaticon-hydro-power"></span>'.html_safe, '', title: '', class: 'overlay-icon' %>
-                                                                    </div>
-                                                                    <div class="lower-box">
-                                                                        <h3><%= link_to 'Sửa chữa điện nước', '', title: '' %></h3>
-                                                                        <div class="text text-justify">Thợ sửa chữa điện nước tại nhà của Điện Nước Trần Chí chuyên nhận sửa điện, sửa nước tại nhà bị các sự cố gặp phải trong quá trình sử dụng cho các hộ gia đình...</div>
-                                                                        <div class="link-box">
-                                                                            <%= link_to '<span class="icon fa fa-angle-right"></span><span class="txt">Đọc tiếp</span>'.html_safe, '', title: '' %>
-                                                                            <div class="icon-box22"><span class="icon  flaticon-creative"></span></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        <% end %>
-                                                    </div>
-                                                    <div class="bottom-text">
-                                                        <div class="text">
-                                                            Nếu bạn có bất kỳ thắc mắc về dịch vụ điện nước? <br>Vui lòng liên hệ Điện Nước Trần Chí qua số điện thoại <span class="phone"><%= link_to '0344 319 990', 'tel:0344319990', title: '' %></a></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <%= render '/frontend/service/related' %>
         </div>
     </div>
 </div>

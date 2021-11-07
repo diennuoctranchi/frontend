@@ -31,8 +31,8 @@ module ApplicationHelper
 		blog_list_path
 	end
 
-	def blog_detail_link
-		blog_detail_path
+	def blog_detail_link(blog)
+		blog_detail_path(blog_id: blog.id, blog_alias: blog.alias)
 	end
 
 	def image_set_tag(source, srcset = {}, options = {})

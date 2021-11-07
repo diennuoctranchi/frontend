@@ -3,18 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <%= favicon_link_tag '/img/favicon.png', rel: 'shortcut icon', type: 'image/x-icon' %>
         <%= favicon_link_tag '/img/favicon.png', rel: 'icon', type: 'image/x-icon' %>
-
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-        <title><% if @page_title.present? %><%= @page_title.html_safe %><% else %>Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Tại Biên Hòa<% end %></title>
+        <title><% if @page_title.present? %><%= @page_title.html_safe %><% else %>Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa<% end %></title>
         <meta name='robots' content='noindex,nofollow,max-image-preview:large' />
-        
         <link rel='dns-prefetch' href='//fonts.googleapis.com' />
         <link rel='dns-prefetch' href='//s.w.org' />
-
+        <link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
         <%= render partial: '/frontend/modules/stylesheets' %>
     </head>
     <body <% if @class.present? %>class="<%= @class %>"<% end %>>
@@ -25,7 +21,6 @@
             <%= render partial: '/frontend/modules/footer' %>
         </div>
         <%= render partial: '/frontend/modules/scroll_to_top' %>
-        <%= render partial: '/frontend/modules/search_popup' %>
         <%= render partial: '/frontend/modules/javascripts' %>
     </body>
 </html>

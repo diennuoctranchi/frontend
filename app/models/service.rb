@@ -4,7 +4,7 @@ class Service < ApplicationRecord
   mount_uploader :image, ServiceImageUploader
 
   def self.get_active
-    self.order('created_at DESC')
+    self.order('created_at desc')
   end
 
   def self.get_best_choice_services

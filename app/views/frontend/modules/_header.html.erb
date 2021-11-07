@@ -4,12 +4,12 @@
             <div class="inner clearfix">
                 <div class="top-left clearfix">
                     <div class="top-text">
-                        Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Tại Biên Hòa
+                        Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa
                     </div>
                 </div>
                 <div class="top-right clearfix">
                     <div class="email">
-                        <%= link_to 'Zalo Tư Vấn', '//zalo.me/0344319990', title: 'Zalo tư vấn', target: '_blank' %>
+                        <%= link_to 'Zalo Tư Vấn & Đặt Lịch Sửa Chữa', '//zalo.me/0344319990', title: 'Zalo tư vấn & đặt lịch sửa chữa', target: '_blank' %>
                     </div>
                 </div>
             </div>
@@ -29,20 +29,20 @@
                         <div class="info clearfix">
                             <div class="info-block">
                                 <div class="icon-box">
-                                    <span class="icon fa fa-phone"></span>
+                                    <span class="icon fas fa-phone-alt"></span>
                                 </div>
                                 <strong>Điện Thoại</strong>
                                 <div class="info-text">
-                                    <%= link_to '0344 319 990', 'tel:0344319990', title: '0344 319 990' %>
+                                    <%= link_to '0344 319 990', 'tel:0344319990', title: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe %>
                                 </div>
                             </div>
                             <div class="info-block">
                                 <div class="icon-box">
-                                    <span class="icon fa fa-home"></span>
+                                    <span class="icon fas fa-home"></span>
                                 </div>
                                 <strong>Địa Chỉ</strong>
                                 <div class="info-text">
-                                    <%= link_to 'E45 Tổ 26, KP.3, Long Bình Tân, TP. Biên Hòa, Đồng Nai', contact_us_link, title: 'E45 Tổ 26, KP.3, Long Bình Tân, TP. Biên Hòa, Đồng Nai' %>
+                                    <%= link_to 'E45 Tổ 26, KP.3, Long Bình Tân, TP. Biên Hòa, Tỉnh Đồng Nai', '', title: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe, target: '_blank', rel: 'noopener' %>
                                 </div>
                             </div>
                         </div>
@@ -55,27 +55,42 @@
                             <nav class="main-menu navbar-expand-md navbar-light">
                                 <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                     <ul class="mrhome navigation clearfix">
-                                        <li class="mrli">
-                                            <%= link_to '', root_link, title: 'Điện Nước Trần Chí &#8211; Sửa Chữa Điện Nước, Máy Lọc Nước Tại Biên Hòa'.html_safe, class: 'homebttn' %>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                            <%= link_to 'Trang Chủ', root_link, title: 'Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa'.html_safe, data: {scroll: '', options: 'easing:easeOutQuart'}, class: 'hvr-underline-from-left1' %>
                                         </li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                                            <%= link_to 'Giới Thiệu', about_us_link, title: 'Giới thiệu', data: {scroll: '', options: 'easing:easeOutQuart'}, class: 'hvr-underline-from-left1' %>
+                                            <%= link_to 'Giới Thiệu', about_us_link, title: 'Giới thiệu thợ sửa chữa điện nước Biên Hòa &#8211; Điện Nước Trần Chí'.html_safe, data: {scroll: '', options: 'easing:easeOutQuart'}, class: 'hvr-underline-from-left1' %>
                                         </li>
                                         <% @service_categories.each do |service_category| %>
                                             <% if service_category.children.count > 0 %>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown">
-                                                    <%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name, data: {toggle: 'dropdown1', scroll: '', options: 'easing:easeOutQuart'}, aria: {expanded: false}, class: 'hvr-underline-from-left1' %>
+                                                    <% if service_category.services.count == 1 %>
+                                                        <% service = service_category.services.first %>
+                                                        <%= link_to service_category.get_name, service_detail_link(service), title: service_category.get_name, data: {toggle: 'dropdown1', scroll: '', options: 'easing:easeOutQuart'}, aria: {expanded: false}, class: 'hvr-underline-from-left1' %>
+                                                    <% else %>
+                                                        <%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name, data: {toggle: 'dropdown1', scroll: '', options: 'easing:easeOutQuart'}, aria: {expanded: false}, class: 'hvr-underline-from-left1' %>
+                                                    <% end %>
                                                     <ul role="menu" class="submenu">
                                                         <% service_category.get_children_categories.each do |child_service_category| %>
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                                                                <%= link_to child_service_category.get_name, service_list_link(child_service_category), title: child_service_category.get_name %>
+                                                                <% if child_service_category.services.count == 1 %>
+                                                                    <% service = child_service_category.services.first %>
+                                                                    <%= link_to child_service_category.get_name, service_detail_link(service), title: child_service_category.get_name %>
+                                                                <% else %>
+                                                                    <%= link_to child_service_category.get_name, service_list_link(child_service_category), title: child_service_category.get_name %>
+                                                                <% end %>
                                                             </li>
                                                         <% end %>
                                                     </ul>
                                                 </li>
                                             <% else %>
                                                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                                                    <%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name, data: {scroll: '', options: 'easing:easeOutQuart'}, class: 'hvr-underline-from-left1' %>
+                                                    <% if service_category.services.count == 1 %>
+                                                        <% service = service_category.services.first %>
+                                                        <%= link_to service_category.get_name, service_detail_link(service), title: service_category.get_name, data: {scroll: '', options: 'easing:easeOutQuart'}, class: 'hvr-underline-from-left1' %>
+                                                    <% else %>
+                                                        <%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name, data: {scroll: '', options: 'easing:easeOutQuart'}, class: 'hvr-underline-from-left1' %>
+                                                    <% end %>
                                                 </li>
                                             <% end %>
                                         <% end %>
@@ -94,14 +109,11 @@
                                             </ul>
                                         </li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                                            <%= link_to 'Liên Hệ', contact_us_link, title: 'Liên hệ', data: {scroll: '', options: 'easing:easeOutQuart'}, class: 'hvr-underline-from-left1' %>
+                                            <%= link_to 'Liên Hệ', contact_us_link, title: 'Liên hệ thợ sửa chữa điện nước Biên Hòa &#8211; Điện Nước Trần Chí'.html_safe, data: {scroll: '', options: 'easing:easeOutQuart'}, class: 'hvr-underline-from-left1' %>
                                         </li>
                                     </ul>
                                 </div>
                             </nav>
-                        </div>
-                        <div class="search-btn">
-                            <button type="button" class="theme-btn search-toggler"><span class="fa fa-search"></span></button>
                         </div>
                     </div>
                 </div>
@@ -130,23 +142,23 @@
             <div class="menu-outer"></div>
             <ul class="social-links clearfix">
                 <li>
-                    <%= link_to '<span class="fab fab fa-facebook-f"></span>'.html_safe, 
+                    <%= link_to '<span class="fab fa-facebook-f"></span>'.html_safe, 
                         '', title: 'FaceBook Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
                 </li>
                 <li>
-                    <%= link_to '<span class="fab fab fa-twitter"></span>'.html_safe, 
+                    <%= link_to '<span class="fab fa-twitter"></span>'.html_safe, 
                         '', title: 'Twitter Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
                 </li>
                 <li>
-                    <%= link_to '<span class="fab fab fa-instagram"></span>'.html_safe, 
-                        '', title: 'Instagram Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
+                    <%= link_to '<span class="fab fa-reddit"></span>'.html_safe, 
+                        '', title: 'Reddit Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
                 </li>
                 <li>
-                    <%= link_to '<span class="fab fab fa-linkedin-in"></span>'.html_safe, 
+                    <%= link_to '<span class="fab fa-linkedin-in"></span>'.html_safe, 
                         '', title: 'LinkedIn Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
                 </li>
                 <li>
-                    <%= link_to '<span class="fab fab fa-pinterest-p"></span>'.html_safe, 
+                    <%= link_to '<span class="fab fa-pinterest-p"></span>'.html_safe, 
                         '', title: 'Pinterest Điện Nước Trần Chí &#8211; DienNuocTranChi.Com'.html_safe, target: '_blank', rel: 'noopener' %>
                 </li>
             </ul>

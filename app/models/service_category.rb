@@ -1,5 +1,6 @@
 class ServiceCategory < ApplicationRecord
   self.table_name = 'erp_electrical_service_categories'
+  mount_uploader :icon, ServiceCategoryIconUploader
   belongs_to :parent, class_name: 'ServiceCategory', optional: true
   has_many :children, class_name: 'ServiceCategory', foreign_key: 'parent_id'
   has_many :services, class_name: 'Service'
@@ -53,5 +54,20 @@ class ServiceCategory < ApplicationRecord
         ids << c.id
     end
     return ids
+  end
+
+  def image_path(version = nil)
+    if !version.nil?
+      return self.icon_url(version)
+    else
+      return self.icon_url
+    end
+  end
+  
+  def service_category_icon(version = nil)
+    ActionView::Base.send(:include, Rails.application.routes.url_helpers)
+    link_helper = ActionController::Base.helpers
+    
+    link_helper.url_for(controller: 'service_categories', action: 'image', title: self.alias, id: self.id, thumb: version)
   end
 end

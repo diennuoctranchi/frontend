@@ -4,13 +4,21 @@ Rails.application.routes.draw do
 
   get '/gioi-thieu' => 'frontend/information#about', as: :about_us
   get '/lien-he' => 'frontend/information#contact', as: :contact_us
+
   get '/nhat-ky-cong-viec' => 'frontend/information#diary', as: :diary
+  get '/nhat-ky-nhat-ky/:title-cid:id(/:thumb)' => 'diaries#image', as: :diary_icon
+
   get '/cau-hoi-thuong-gap' => 'frontend/information#faq', as: :faq
 
   get '/chuyen-muc/:service_category_alias-cid:service_category_id' => 'frontend/service#list', as: :service_list
+  get '/icon-chuyen-muc/:title-cid:id(/:thumb)' => 'service_categories#image', as: :service_category_icon
+
   get '/chi-tiet/:service_alias-cid:service_id' => 'frontend/service#detail', as: :service_detail
-  get '/hinh-anh-dich-vu/:title/:id(/:thumb)' => 'services#image', as: :service_image
+  get '/hinh-anh-dich-vu/:title-cid:id(/:thumb)' => 'services#image', as: :service_image
 
   get '/chia-se-kinh-nghiem' => 'frontend/blog#list', as: :blog_list
-  get '/chi-tiet-chia-se-kinh-nghiem' => 'frontend/blog#detail', as: :blog_detail
+  get '/chia-se-kinh-nghiem//:blog_alias-cid:blog_id' => 'frontend/blog#detail', as: :blog_detail
+  get '/hinh-anh-chia-se-kinh-nghiem/:title-cid:id(/:thumb)' => 'blogs#image', as: :blog_image
+
+  patch '/editor/upload' => 'editor_uploads#upload'
 end

@@ -12,29 +12,47 @@
                                         <div class="sec-title bio-theme centered">
                                             <div class="upper-text">
                                                 <span class="logo_bolt2">
-                                                    <%= image_tag '/img/bolt-1.gif', alt: '', title: '' %>
+                                                    <%= image_tag '/img/bolt.gif', alt: title_2, title: title_2 %>
                                                 </span>
                                                 <%= title_1 %>
                                             </div>
                                             <h2><%= title_2 %></h2>
                                         </div>
                                         <div class="row clearfix">
-                                            <% parent_service_category.children.each do |service_category| %>
+                                            <% list_category.each do |service_category| %>
                                                 <div class="service-block-four col-lg-4 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="0ms"  data-wow-duration="2000ms">
                                                     <div class="inner-box">
                                                         <div class="icon-box">
-                                                            <%= image_tag '/img/icons/039-tools-and-utensils-1.png', alt: '', title: '' %>
+                                                            <% if service_category.icon.present? %>
+                                                                <%= image_set_tag(service_category.service_category_icon,
+                                                                             {service_category.service_category_icon(:detail_40x40) => '40w'},
+                                                                    title: service_category.get_name, alt: service_category.get_name, size: '40x40', sizes: '(max-width: 40px) 100vw, 40px', loading: 'lazy', class: 'attachment-post-thumbnail size-post-thumbnail wp-post-image') %>
+                                                            <% else %>
+                                                                <%= image_set_tag('/img/icons/dich-vu-dien-nuoc-bien-hoa.png',
+                                                                             {'/img/icons/dich-vu-dien-nuoc-bien-hoa-40x40.png' => '40w'},
+                                                                    title: service_category.get_name, alt: service_category.get_name, size: '40x40', sizes: '(max-width: 40px) 100vw, 40px', loading: 'lazy', class: 'attachment-post-thumbnail size-post-thumbnail wp-post-image') %>
+                                                            <% end %>
                                                         </div>
                                                         <div class="lower-box">
                                                             <div class="title">
-                                                                <h3><%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name %></h3>
+                                                                <% if service_category.services.count == 1 %>
+                                                                    <% service = service_category.services.first %>
+                                                                    <h3><%= link_to service_category.get_name, service_detail_link(service), title: service_category.get_name %></h3>
+                                                                <% else %>
+                                                                    <h3><%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name %></h3>
+                                                                <% end %>
                                                                 <% if service_category.meta_description.present? %>
                                                                     <div class="subtitle"><%= service_category.meta_description %></div>
                                                                 <% end %>
                                                             </div>
                                                         </div>
                                                         <div class="link-box">
-                                                            <%= link_to '<span class="txt">Xem Chi Tiết</span><span class="icon flaticon-arrows-11"></span>'.html_safe, service_list_link(service_category), title: service_category.get_name %>
+                                                            <% if service_category.services.count == 1 %>
+                                                                <% service = service_category.services.first %>
+                                                                <%= link_to '<span class="txt">Xem Chi Tiết</span><span class="icon flaticon-arrows-11"></span>'.html_safe, service_detail_link(service), title: service_category.get_name %>
+                                                            <% else %>
+                                                                <%= link_to '<span class="txt">Xem Chi Tiết</span><span class="icon flaticon-arrows-11"></span>'.html_safe, service_list_link(service_category), title: service_category.get_name %>
+                                                            <% end %>
                                                         </div>
                                                     </div>
                                                 </div>

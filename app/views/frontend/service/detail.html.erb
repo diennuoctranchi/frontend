@@ -8,7 +8,25 @@
                     <li class="breadcrumb-item">
                         <%= link_to 'Trang Chủ', root_link, title: 'Điện Nước Trần Chí &#8211; Thợ sửa điện nước tại Biên Hòa'.html_safe %>
                     </li>
-                    <li class="breadcrumb-item">Sửa Chữa Điện Nước</li>
+                    <% if @service.service_category.parent_id.present? %>
+                        <li class="breadcrumb-item">
+                            <% if @parent_service_category.services.count == 1 %>
+                                <% service = @parent_service_category.services.first %>
+                                <%= link_to @parent_service_category.get_name, service_detail_link(service), title: @parent_service_category.get_name %>
+                            <% else %>
+                                <%= link_to @parent_service_category.get_name, service_list_link(@parent_service_category), title: @parent_service_category.get_name %>
+                            <% end %>
+                        </li>
+                    <% end %>
+                    <li class="breadcrumb-item">
+                        <% if @service.service_category.services.count == 1 %>
+                            <% service = @service.service_category.services.first %>
+                            <%= link_to @service.get_service_category_name, service_detail_link(service), title: @service.get_service_category_name %>
+                        <% else %>
+                            <%= link_to @service.get_service_category_name, service_list_link(@service.service_category), title: @service.get_service_category_name %>
+                        <% end %>
+                    </li>
+                    <li class="breadcrumb-item"><%= @service.get_name %></li>
                 </ul>
             </div>
         </div>
@@ -33,12 +51,16 @@
                                                                 <div class="sidebar-widget services-widget">
                                                                     <div class="widget-inner">
                                                                         <ul>
-                                                                            <li class=""><a href=""><span class="txt">IPS &amp; UPS Install</span> <span class="icon icon flaticon-power-2"></span></a></li>
-                                                                            <li class="active"><a href=""><span class="txt">Tv &amp; Ac Install at Home</span> <span class="icon icon flaticon-settings-1"></span></a></li>
-                                                                            <li class=""><a href=""><span class="txt">Electric Repaire Office</span> <span class="icon icon flaticon-energy-1"></span></a></li>
-                                                                            <li class=""><a href=""><span class="txt">Installing Equipment </span> <span class="icon icon flaticon-nuclear-plant"></span></a></li>
-                                                                            <li class=""><a href=""><span class="txt">Commercial Services</span> <span class="icon icon flaticon-nuclear-power"></span></a></li>
-                                                                            <li class=""><a href=""><span class="txt">Residential Setup Change </span> <span class="icon icon flaticon-oil-2"></span></a></li>
+                                                                            <% @parent_service_category.children.get_active.each do |children_service_category| %>
+                                                                                <li class="<%= 'active' if children_service_category.id == @service.service_category_id %>">
+                                                                                    <% if children_service_category.services.count == 1 %>
+                                                                                        <% service = children_service_category.services.first %>
+                                                                                        <%= link_to '<span class="txt">'.html_safe + children_service_category.get_name + '</span>'.html_safe, service_detail_link(service), title: children_service_category.get_name %>
+                                                                                    <% else %>
+                                                                                        <%= link_to '<span class="txt">'.html_safe + children_service_category.get_name + '</span>'.html_safe, service_list_link(children_service_category), title: children_service_category.get_name %>
+                                                                                    <% end %>
+                                                                                </li>
+                                                                            <% end %>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
@@ -64,30 +86,25 @@
                                                             <div class="service-details">
                                                                 <div class="details-inner">
                                                                     <div class="main-image">
-                                                                        <%= image_tag '/img/tmp/cut-1.jpg', alt: '', title: '' %>
+                                                                        <%= link_to image_set_tag(@service.service_image,
+                                                                                    {@service.service_image(:detail_1920x750) => '1920w',
+                                                                                    @service.service_image(:detail_1536x600) => '1536w',
+                                                                                    @service.service_image(:detail_1040x400) => '1040w',
+                                                                                    @service.service_image(:detail_768x300) => '768w',
+                                                                                    @service.service_image(:detail_600x234) => '600w',
+                                                                                    @service.service_image(:detail_300x117) => '300w'},
+                                                                                    title: @service.get_name, alt: @service.get_name, size: '1920x750', sizes: '(max-width: 1920px) 100vw, 1920px', loading: 'lazy', class: 'attachment-post-thumbnail size-post-thumbnail wp-post-image'),
+                                                                            service_detail_link(service), title: @service.get_name %>
                                                                     </div>
                                                                     <div class="sec-title service-title">
-                                                                        <h2>Dịch Vụ Sửa Chữa Điện Nước Tại Biên Hòa, Đồng Nai</h2>
+                                                                        <h2><%= @service.get_name %></h2>
                                                                         <div class="subtitle">Điện Nước Trần Chí</div>
-                                                                        <div class="bottom-dots clearfix">
-                                                                            <span class="dot line-dot"></span>
-                                                                            <span class="dot"></span>
-                                                                            <span class="dot"></span>
-                                                                            <span class="dot"></span>
+                                                                    </div>
+                                                                    <% if @service.content.present? %>
+                                                                        <div class="text-block text-content text-justify">
+                                                                            <%= @service.content.html_safe %>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="text-block text-content text-justify">
-                                                                        <p>Thợ sửa chữa điện nước tại nhà của công ty Hưng Thịnh chuyên nhận sửa điện, sửa nước tại nhà bị các sự cố gặp phải trong quá trình sử dụng cho các hộ gia đình, văn phòng công ty, nhà hàng, khách sạn, shop cửa hàng...</p>
-                                                                        <p>Chúng tôi có đội ngũ nhân lực trên 20 thợ điện nước lành nghề, luôn sẵn sàng phục vụ nhu cầu <%= link_to 'sửa điện nước tại nhà', '', title: '' %> của khách hàng tại TP. HCM, Bình Dương, Biên Hòa.</p>
-                                                                        <p>Chỉ cần gọi điện đến, chúng tôi sẽ cử thợ điện nước giỏi, nhiều năm kinh nghiệm xuống kiểm tra, báo giá và khắc phục nhanh sự cố cho quý khách. Liên hệ 0911.048.049 – 0933.424.669.</p>
-                                                                        <%= image_tag '/img/tmp/cut-1.jpg', alt: '', title: '' %>
-                                                                        <h4>Thợ sửa chữa điện tại nhà giá rẻ</h4>
-                                                                        <p>Hưng Thịnh là một trong những đơn vị cung cấp dịch vụ thợ sửa điện tại nhà giá rẻ được nhiều khách hàng tin tưởng lựa chọn hiện nay.</p>
-                                                                        <p>Với đội ngũ thợ điện nước có tay nghề giỏi lâu năm, có nhiều kinh nghiệm đảm bảo về kỹ thuật, uy tín chất lượng, chúng tôi sẽ hỗ trợ:</p>
-                                                                        <h3>Thợ sửa chữa điện tại nhà giá rẻ</h3>
-                                                                        <p>Hưng Thịnh là một trong những đơn vị cung cấp dịch vụ thợ sửa điện tại nhà giá rẻ được nhiều khách hàng tin tưởng lựa chọn hiện nay.</p>
-                                                                        <p>Với đội ngũ thợ điện nước có tay nghề giỏi lâu năm, có nhiều kinh nghiệm đảm bảo về kỹ thuật, uy tín chất lượng, chúng tôi sẽ hỗ trợ:</p>
-                                                                    </div>
+                                                                    <% end %>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -102,51 +119,26 @@
                     </div>
                 </div>
             </section>
-            <section class="elementor-section elementor-top-section elementor-element elementor-element-19cd49f elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="19cd49f" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
-                <div class="elementor-container elementor-column-gap-no">
-                    <div class="elementor-row">
-                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b57e205" data-id="b57e205" data-element_type="column">
-                            <div class="elementor-column-wrap elementor-element-populated">
-                                <div class="elementor-widget-wrap">
-                                    <div class="elementor-element elementor-element-6a7c3d8 elementor-widget elementor-widget-electman_services_price" data-id="6a7c3d8" data-element_type="widget" data-widget_type="electman_services_price.default">
-                                        <div class="elementor-widget-container">
-                                            <section class=" services-price">
-                                                <div class="auto-container">
-                                                    <div class="sec-title text-center">
-                                                        <span class="sec-title-dec"></span>
-                                                        <h2>Bảng Giá Thợ Sửa Chữa Điện Nước Tại Nhà Trần Chí</h2>
-                                                        <div class="text">Báo giá sửa chữa điện dân dụng và lắp đặt các thiết bị điện trong nhà</div>
-                                                    </div>
-                                                    <table class="table table-striped">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">DỊCH VỤ</th>
-                                                                <th scope="col">ĐƠN VỊ TÍNH</th>
-                                                                <th scope="col">ĐƠN GIÁ</th>
-                                                                <th scope="col">NỘI DUNG CÔNG VIỆC</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <% (0..9).each do |quotation| %>
-                                                                <tr>
-                                                                    <td>Lắp mới 1 bộ bóng đèn Huỳnh Quang, đèn compact</td>
-                                                                    <td>Bộ</td>
-                                                                    <td>Từ 150.000 VNĐ</td>
-                                                                    <td>Lắp bộ bóng đèn + công tắc, giá tùy thuộc vào việc đi dây nguồn. Giảm giá theo số lượng.</td>
-                                                                </tr>
-                                                            <% end %>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </section>
+            <% if @service.quotation.present? %>
+                <section class="elementor-section elementor-top-section elementor-element elementor-element-19cd49f elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="19cd49f" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+                    <div class="elementor-container elementor-column-gap-no">
+                        <div class="elementor-row">
+                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b57e205" data-id="b57e205" data-element_type="column">
+                                <div class="elementor-column-wrap elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-6a7c3d8 elementor-widget elementor-widget-electman_services_price" data-id="6a7c3d8" data-element_type="widget" data-widget_type="electman_services_price.default">
+                                            <div class="elementor-widget-container">
+                                                <%= @service.quotation.html_safe %>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            <% end %>
+            <%= render '/frontend/service/related' %>
         </div>
     </div>
 </div>

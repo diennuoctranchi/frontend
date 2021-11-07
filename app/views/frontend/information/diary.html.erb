@@ -9,7 +9,7 @@
                         <%= link_to 'Trang Chủ', root_link, title: 'Điện Nước Trần Chí &#8211; Thợ sửa điện nước tại Biên Hòa'.html_safe %>
                     </li>
                     <li class="breadcrumb-item">
-                        <%= link_to 'Tin Tức', blog_list_link, title: '' %>
+                        <%= link_to 'Tin Tức', blog_list_link, title: 'Tin Tức' %>
                     </li>
                     <li class="breadcrumb-item">Nhật Ký Công Việc</li>
                 </ul>
@@ -32,15 +32,19 @@
                                                 <div class=" gallery-2">
                                                     <div class="auto-container">
                                                         <div class="row clearfix">
-                                                            <% (0..11).each do |dairy| %>
+                                                            <% @diaries.each do |diary| %>
                                                                 <div class="gallery-block col-md-4 col-sm-6 col-xs-12 wow fadeIn" data-wow-delay="800ms">
                                                                     <div class="image-box">
                                                                         <div class="image">
-                                                                            <%= link_to image_tag('/img/tmp/diary.jpeg', alt: '', title: ''), '/img/tmp/diary.jpeg', title: '', class: '', data: {fancybox: 'gallery'} %>
+                                                                            <%= link_to image_set_tag(diary.diary_image,
+                                                                                        {diary.diary_image(:detail_370x260) => '370w',
+                                                                                         diary.diary_image(:detail_740x520) => '740w'},
+                                                                                        title: diary.get_name, alt: diary.get_name, size: '370x260', sizes: '(max-width: 370px) 100vw, 40px', loading: '370px', class: 'attachment-post-thumbnail size-post-thumbnail wp-post-image'),
+                                                                                diary.diary_image(:detail_740x520), title: diary.get_name, class: '', data: {fancybox: 'gallery'} %>
                                                                         </div>
                                                                         <div class="caption-box">
                                                                             <div class="content">
-                                                                                <h3>Sửa Điện Tại Nhà Ở Biên Hòa</h3>
+                                                                                <h3><%= diary.get_name %></h3>
                                                                                 <span>Điện Nước Trần Chí</span>
                                                                             </div>
                                                                         </div>
