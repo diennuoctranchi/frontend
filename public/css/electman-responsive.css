@@ -68,7 +68,8 @@
   .banner-three .banner-carousel .content-box h1,
   .banner-two .banner-carousel .content-box h1,
   .page-banner h1 {
-    font-size: 60px;
+    font-size: 20px!important;
+    line-height: 1.5;
   }
   .about-section-one .image-column .inner {
     padding-right: 0;
