@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: diennuoctranchi_production
-  username: sonnn
-  password: <%= ENV[''] %>
+  username: tranchi
+  password: tC@202!db
