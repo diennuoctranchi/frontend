@@ -1346,7 +1346,7 @@ img {
 .scroll-to-top {
   position: fixed;
   right: 20px;
-  bottom: 100px;
+  bottom: 20px;
   width: 54px;
   height: 54px;
   color: #fff;
@@ -15277,7 +15277,7 @@ section.five.team-single-area {
 .scroll-to-top {
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  bottom: 100px;
   width: 54px;
   height: 54px;
   color: #fff;
