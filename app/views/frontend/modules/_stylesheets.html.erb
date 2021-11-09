@@ -53,6 +53,7 @@
         <% elsif (params[:controller] == 'frontend/service' && params[:action] == 'detail') %>
         <%= stylesheet_link_tag '/css/elementor-post-515.css', id: 'elementor-post-515-css', media: 'all' %>
         <% end %>
+        <%= stylesheet_link_tag '/css/social-button.css', media: 'all' %>
 
         <%= stylesheet_link_tag '//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap', id: 'google-fonts-1-css', media: 'all' %>
 
@@ -60,9 +61,4 @@
         <%= javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js', id: 'jquery-migrate-js' %>
         <noscript><style>.woocommerce-product-gallery{opacity:1!important}</style></noscript>
         <%= javascript_include_tag '//www.googletagmanager.com/gtag/js?id=G-9HR69YCNYX', async: '' %>
-        <script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-9HR69YCNYX');
-        </script>
+        <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-9HR69YCNYX');</script>
