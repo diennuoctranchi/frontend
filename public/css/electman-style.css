@@ -3372,8 +3372,8 @@ img.lazy-image.loaded {
   font-size: 18px;
   color: #181c32;
   font-weight: 600;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 .sec-title.bio-theme .subtitle {
   color: #6a6a6a;
@@ -3523,7 +3523,7 @@ img.lazy-image.loaded {
 .about-section-one .text-content p {
   margin-bottom: 10px;
   font-size: 16px;
-  line-height: 1.8em;
+  line-height: 1.6em;
   color: #181c32;
   font-weight: 400;
 }
@@ -11841,7 +11841,7 @@ img.lazy-image.loaded {
 .features_list li {
   padding-bottom: 10px;
   font-size: 16px;
-  line-height: 1.8em;
+  line-height: 1.6em;
   color: #181c32;
   font-weight: 400;
 }
