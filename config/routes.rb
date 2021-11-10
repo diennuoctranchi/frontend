@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get '/hinh-anh-dich-vu/:title-cid:id(/:thumb)' => 'services#image', as: :service_image
 
   get '/chia-se-kinh-nghiem' => 'frontend/blog#list', as: :blog_list
-  get '/chia-se-kinh-nghiem//:blog_alias-cid:blog_id' => 'frontend/blog#detail', as: :blog_detail
+  get '/chia-se-kinh-nghiem/:blog_alias-cid:blog_id' => 'frontend/blog#detail', as: :blog_detail
   get '/hinh-anh-chia-se-kinh-nghiem/:title-cid:id(/:thumb)' => 'blogs#image', as: :blog_image
 
   patch '/editor/upload' => 'editor_uploads#upload'
