@@ -17,9 +17,9 @@ module Frontend
 
         def detail
             @class = 'page-template page-template-tpl-default-elementor page-template-tpl-default-elementor-php page theme-electman woocommerce-no-js menu-layer elementor-default elementor-kit-1 elementor-page elementor-page-515'
-            @page_title = 'Sửa Chữa Điện Tận Nhà, Uy Tín, Giá Rẻ &#8211; Điện Nước Trần Chí'
             @service_categories = ServiceCategory.get_categories
             @service = Service.find(params[:service_id])
+            @page_title = @service.get_title
 
             if @service.service_category.parent_id.present?
                 @parent_service_category = @service.service_category.parent
