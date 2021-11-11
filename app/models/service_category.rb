@@ -17,6 +17,10 @@ class ServiceCategory < ApplicationRecord
     self.name
   end
 
+  def get_short_description
+    self.short_description
+  end
+
   def get_meta_keywords
     self.meta_keywords
   end

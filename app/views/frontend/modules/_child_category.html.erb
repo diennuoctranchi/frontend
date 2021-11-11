@@ -41,8 +41,8 @@
                                                                 <% else %>
                                                                     <h3><%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name %></h3>
                                                                 <% end %>
-                                                                <% if service_category.meta_description.present? %>
-                                                                    <div class="subtitle"><%= service_category.meta_description %></div>
+                                                                <% if service_category.description.present? %>
+                                                                    <div class="subtitle"><%= service_category.get_short_description %></div>
                                                                 <% end %>
                                                             </div>
                                                         </div>
