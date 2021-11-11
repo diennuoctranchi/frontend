@@ -18,6 +18,14 @@ class Service < ApplicationRecord
   def get_title
     self.title
   end
+
+  def get_meta_keywords
+    self.meta_keywords
+  end
+
+  def get_meta_description
+    self.meta_description
+  end
   
   def get_service_category_name
     service_category.present? ? service_category.get_name : ''

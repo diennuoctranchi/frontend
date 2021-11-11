@@ -15,10 +15,9 @@ module Frontend
 
         def detail
             @class = 'post-template-default single single-post single-format-standard theme-electman woocommerce-no-js menu-layer elementor-default elementor-kit-1'
-            @page_title = 'Chi Tiết Chia Sẻ Kinh Nghiệm &#8211; Điện Nước Trần Chí'
             @service_categories = ServiceCategory.get_categories
-
             @blog = Blog.find(params[:blog_id])
+            @page_title = @blog.get_title
         end
     end
 end

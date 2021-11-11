@@ -17,6 +17,14 @@ class ServiceCategory < ApplicationRecord
     self.name
   end
 
+  def get_meta_keywords
+    self.meta_keywords
+  end
+
+  def get_meta_description
+    self.meta_description
+  end
+
   def get_parent_name
     self.parent.present? ? self.parent.get_full_name : ''
   end

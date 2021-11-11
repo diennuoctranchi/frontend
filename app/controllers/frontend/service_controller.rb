@@ -6,6 +6,9 @@ module Frontend
 
             @service_category = ServiceCategory.find(params[:service_category_id])
             @page_title = @service_category.get_title
+            @meta_keywords = @service_category.get_meta_keywords
+            @meta_description = @service_category.get_meta_description
+
             @services = Kaminari.paginate_array(@service_category.get_services_for_service_categories(params)).page(params[:page]).per(1)
 
             if @service_category.parent_id.present?
@@ -20,6 +23,8 @@ module Frontend
             @service_categories = ServiceCategory.get_categories
             @service = Service.find(params[:service_id])
             @page_title = @service.get_title
+            @meta_keywords = @service.get_meta_keywords
+            @meta_description = @service.get_meta_description
 
             if @service.service_category.parent_id.present?
                 @parent_service_category = @service.service_category.parent
