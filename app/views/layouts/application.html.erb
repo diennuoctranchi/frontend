@@ -40,18 +40,15 @@
         <%= render partial: '/frontend/modules/schema' %>
     </head>
     <body <% if @class.present? %>class="<%= @class %>"<% end %>>
-        <div id="fb-root"></div>
-        <div id="fb-customer-chat" class="fb-customerchat"></div>
-        <script>$(document).ready(function(){$(".user-support").click(function(n){$(".social-button-content").slideToggle()})});</script>
-        <script>var chatbox=document.getElementById("fb-customer-chat");chatbox.setAttribute("page_id","110045811486594"),chatbox.setAttribute("attribution","biz_inbox"),window.fbAsyncInit=function(){FB.init({xfbml:!0,version:"v12.0"})},function(t,e,n){var o,c=t.getElementsByTagName(e)[0];t.getElementById(n)||((o=t.createElement(e)).id=n,o.src="//connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js",c.parentNode.insertBefore(o,c))}(document,"script","facebook-jssdk");</script>
         <div class="page-wrapper">
             <%= render partial: '/frontend/modules/header' %>
             <%= yield %>
             <div class="clearfix"></div>
             <%= render partial: '/frontend/modules/footer' %>
         </div>
-        <%= render partial: '/frontend/modules/social_button' %>
         <%= render partial: '/frontend/modules/scroll_to_top' %>
+        <%= render partial: '/frontend/modules/social_button' %>
+        <script>$(document).ready(function(){$(".user-support").click(function(n){$(".social-button-content").slideToggle()})});</script>
         <%= render partial: '/frontend/modules/javascripts' %>
     </body>
 </html>
