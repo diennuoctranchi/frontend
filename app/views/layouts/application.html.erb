@@ -37,7 +37,10 @@
         <link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
         <link rel='dns-prefetch' href='//connect.facebook.net' />
         <%= render partial: '/frontend/modules/stylesheets' %>
-        <%= render partial: '/frontend/modules/schema' %>
+        <%= render partial: '/frontend/modules/schema/main' %>
+        <% if (params[:controller] == 'frontend/home' && params[:action] == 'index') %>
+            <%= render partial: '/frontend/modules/schema/home' %>
+        <% end %>
     </head>
     <body <% if @class.present? %>class="<%= @class %>"<% end %>>
         <div class="page-wrapper">
