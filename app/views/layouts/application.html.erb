@@ -126,7 +126,14 @@
             <%= render partial: '/frontend/modules/schema/diary' %>
         <% elsif (params[:controller] == 'frontend/information' && params[:action] == 'faq') %>
             <%= render partial: '/frontend/modules/schema/faq' %>
-        <% else %>
+        <% elsif (params[:controller] == 'frontend/blog' && params[:action] == 'list') %>
+            <%= render partial: '/frontend/modules/schema/blog_list' %>
+        <% elsif (params[:controller] == 'frontend/blog' && params[:action] == 'detail') %>
+            <%= render partial: '/frontend/modules/schema/blog_detail' %>
+        <% elsif (params[:controller] == 'frontend/service' && params[:action] == 'list') %>
+            <%= render partial: '/frontend/modules/schema/service_list' %>
+        <% elsif (params[:controller] == 'frontend/service' && params[:action] == 'detail') %>
+            <%= render partial: '/frontend/modules/schema/service_detail' %>
         <% end %>
     </head>
     <body <% if @class.present? %>class="<%= @class %>"<% end %>>

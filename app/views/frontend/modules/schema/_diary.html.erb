@@ -16,6 +16,41 @@
         "name": "Nhật Ký Công Việc",
         "item": "https://diennuoctranchi.com/nhat-ky-cong-viec"  
       }]
+    },
+    {
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://diennuoctranchi.com/nhat-ky-cong-viec"
+      },
+      "headline": "<%= @page_title.html_safe %>",
+      "description": "<%= @meta_description.html_safe %>",
+      <% if @count > 0 %>
+        "image": [
+          <% @diaries.each_with_index do |diary,index| %>
+            <% if (index+1) == (@count) %>
+              "https://diennuoctranchi.com<%= diary.diary_image %>"
+            <% else %>
+              "https://diennuoctranchi.com<%= diary.diary_image %>",
+            <% end %>
+          <% end %>
+        ],
+      <% end %>
+      "author": {
+        "@type": "Organization",
+        "name": "Điện Nước Trần Chí",
+        "url": "https://diennuoctranchi.com/"
+      },  
+      "publisher": {
+        "@type": "Organization",
+        "name": "Điện Nước Trần Chí",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://diennuoctranchi.com/img/logo.png"
+        }
+      },
+      "datePublished": "30/10/2021",
+      "dateModified": "13/11/2021"
     }
   ]
 }

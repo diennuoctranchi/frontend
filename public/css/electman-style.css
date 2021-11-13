@@ -107,7 +107,7 @@ p {
 .auto-container {
   position: static;
   max-width: 1200px;
-  padding: 0 15px;
+  padding: 0 5px;
   margin: 0 auto;
 }
 li,
@@ -10845,7 +10845,7 @@ img.lazy-image.loaded {
   position: relative;
 }
 .sidebar-page-container .service-sidebar {
-  padding-right: 20px;
+  padding-right: 5px;
 }
 .sidebar-page-container .blog-sidebar {
   padding-left: 30px;

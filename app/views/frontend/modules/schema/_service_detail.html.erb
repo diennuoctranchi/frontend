@@ -4,14 +4,33 @@
   "@graph":
   [
     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem", 
+        "position": 1, 
+        "name": "Trang Chủ",
+        "item": "https://diennuoctranchi.com/"  
+      },{
+        "@type": "ListItem", 
+        "position": 2, 
+        "name": "<%= @service.get_service_category_name %>",
+        "item": "https://diennuoctranchi.com<%= service_list_link(@service.service_category) %>"  
+      },{
+        "@type": "ListItem", 
+        "position": 3, 
+        "name": "<%= @service.get_name %>",
+        "item": "https://diennuoctranchi.com<%= service_detail_link(@service) %>"  
+      }]
+    },
+    {
       "@type": "Article",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://diennuoctranchi.com/"
+        "@id": "<%= service_detail_link(@service) %>"
       },
       "headline": "<%= @page_title.html_safe %>",
       "description": "<%= @meta_description.html_safe %>",
-      "image": "https://diennuoctranchi.com/img/banner-share.jpg",  
+      "image": "https://diennuoctranchi.com<%= @service.service_image %>",  
       "author": {
         "@type": "Organization",
         "name": "Điện Nước Trần Chí",
@@ -25,16 +44,15 @@
           "url": "https://diennuoctranchi.com/img/logo.png"
         }
       },
-      "datePublished": "30/10/2021",
-      "dateModified": "13/11/2021"
+      "datePublished": "<%= @service.created_at.strftime("%d/%m/%Y") %>",
+      "dateModified": "<%= @service.updated_at.strftime("%d/%m/%Y") %>"
     }
   ]
 }
 </script>
-<meta property="og:locale" content="vi_VN" />
 <meta property="og:title" content="<%= @page_title.html_safe %>">
 <meta property="og:site_name" content="Điện Nước Trần Chí">
-<meta property="og:url" content="https://diennuoctranchi.com/">
+<meta property="og:url" content="https://diennuoctranchi.com<%= service_detail_link(@service) %>">
 <meta property="og:description" content="<%= @meta_description.html_safe %>">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://diennuoctranchi.com/img/banner-share.jpg">

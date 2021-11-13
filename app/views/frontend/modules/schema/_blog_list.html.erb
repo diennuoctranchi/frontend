@@ -1,0 +1,59 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@graph":
+  [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem", 
+        "position": 1, 
+        "name": "Trang Chủ",
+        "item": "https://diennuoctranchi.com/"  
+      },{
+        "@type": "ListItem", 
+        "position": 2, 
+        "name": "Chia Sẻ Kinh Nghiệm",
+        "item": "https://diennuoctranchi.com/chia-se-kinh-nghiem"  
+      }]
+    },
+    {
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://diennuoctranchi.com/chia-se-kinh-nghiem"
+      },
+      "headline": "<%= @page_title.html_safe %>",
+      "description": "<%= @meta_description.html_safe %>",
+      "image": "https://diennuoctranchi.com/img/banner-share.jpg",  
+      "author": {
+        "@type": "Organization",
+        "name": "Điện Nước Trần Chí",
+        "url": "https://diennuoctranchi.com/"
+      },  
+      "publisher": {
+        "@type": "Organization",
+        "name": "Điện Nước Trần Chí",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://diennuoctranchi.com/img/logo.png"
+        }
+      },
+      "datePublished": "30/10/2021",
+      "dateModified": "13/11/2021"
+    }
+  ]
+}
+</script>
+<meta property="og:title" content="<%= @page_title.html_safe %>">
+<meta property="og:site_name" content="Điện Nước Trần Chí">
+<meta property="og:url" content="https://diennuoctranchi.com/chia-se-kinh-nghiem">
+<meta property="og:description" content="<%= @meta_description.html_safe %>">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://diennuoctranchi.com/img/banner-share.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@diennuoctranchi">
+<meta name="twitter:title" content="<%= @page_title.html_safe %>">
+<meta name="twitter:description" content="<%= @meta_description.html_safe %>">
+<meta name="twitter:image" content="https://diennuoctranchi.com/img/banner-share.jpg">

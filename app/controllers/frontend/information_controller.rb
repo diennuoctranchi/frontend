@@ -21,6 +21,7 @@ module Frontend
             @service_categories = ServiceCategory.get_categories
 
             @diaries = Diary.get_active
+            @count = @diaries.count
         end
 
         def faq
@@ -30,6 +31,7 @@ module Frontend
             @service_categories = ServiceCategory.get_categories
 
             @faqs = Faq.get_active
+            @count = @faqs.count
         end
     end
 end
