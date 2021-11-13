@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title><% if @page_title.present? %><%= @page_title.html_safe %><% else %>Điện Nước Trần Chí &#8211; Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa<% end %></title>
         <meta name='robots' content='index,follow,max-image-preview:large' />
-        <% if @meta_description.present? %><meta name="description" content="<%= @meta_description %>"><% else %><meta name="description" content="Điện Nước Trần Chí tự hào là đơn vị chuyên cung cấp các dịch vụ lắp đặt, bảo trì và sửa chữa điện nước tại khu vực TP. Biên Hòa thuộc tỉnh Đồng Nai."><% end %>
+        <% if @meta_description.present? %><meta name="description" content="<%= @meta_description.html_safe %>"><% else %><meta name="description" content="Điện Nước Trần Chí tự hào là đơn vị chuyên cung cấp các dịch vụ lắp đặt, bảo trì và sửa chữa điện nước tại khu vực TP. Biên Hòa thuộc tỉnh Đồng Nai."><% end %>
         
         <% if (params[:controller] == 'frontend/home' && params[:action] == 'index') %>
             <link rel="canonical" href="https://diennuoctranchi.com/" />
@@ -37,9 +37,96 @@
         <link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
         <link rel='dns-prefetch' href='//connect.facebook.net' />
         <%= render partial: '/frontend/modules/stylesheets' %>
-        <%= render partial: '/frontend/modules/schema/main' %>
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+            "@graph":
+            [
+                {
+                    "@type": "Organization",
+                    "name": "Điện Nước Trần Chí",
+                    "alternateName": "Thợ Sửa Chữa Điện Nước, Máy Lọc Nước Biên Hòa",
+                    "url": "https://diennuoctranchi.com/",
+                    "logo": "https://diennuoctranchi.com/img/logo.png",
+                    "contactPoint": [{
+                        "@type": "ContactPoint",
+                        "telephone": "0344319990",
+                        "contactType": "customer service",
+                        "areaServed": "VN",
+                        "availableLanguage": "Vietnamese"
+                    },{
+                        "@type": "ContactPoint",
+                        "telephone": "0344319990",
+                        "contactType": "technical support",
+                        "areaServed": "VN",
+                        "availableLanguage": "Vietnamese"
+                    }]
+                },
+                {
+                    "@type": "ProfessionalService",
+                    "name": "Điện Nước Trần Chí",
+                    "image": "https://diennuoctranchi.com/img/banner-share.jpg",
+                    "@id": "https://diennuoctranchi.com/",
+                    "url": "https://diennuoctranchi.com/",
+                    "telephone": "0344319990",
+                    "priceRange": "50.000 VND - 100.000.000 VND",
+                    "servesCuisine": "Việt Nam",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "E45 Tổ 26, KP. 3, Long Bình Tân",
+                        "addressLocality": "TP. Biên Hòa",
+                        "addressRegion": "Tỉnh Đồng Nai",
+                        "postalCode": "76129",
+                        "addressCountry": "VN"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 10.9005241,
+                        "longitude": 106.8799056
+                    },
+                    "openingHoursSpecification": {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": [
+                            "Monday",
+                            "Tuesday",
+                            "Wednesday",
+                            "Thursday",
+                            "Friday",
+                            "Saturday",
+                            "Sunday"
+                        ],
+                        "opens": "00:00",
+                        "closes": "23:59"
+                    },
+                    "sameAs": [
+                        "https://www.facebook.com/DienNuocTranChi/",
+                        "https://twitter.com/diennuoctranchi"
+                    ] 
+                },
+                {
+                    "@type": "WebSite",
+                    "name": "Điện Nước Trần Chí",
+                    "url": "https://diennuoctranchi.com/",
+                    "potentialAction": {
+                        "@type": "SearchAction",
+                        "target": "https://diennuoctranchi.com/?keywords={search_term_string}",
+                        "query-input": "required name=search_term_string"
+                    }
+                }
+            ]
+        }
+        </script>
         <% if (params[:controller] == 'frontend/home' && params[:action] == 'index') %>
             <%= render partial: '/frontend/modules/schema/home' %>
+        <% elsif (params[:controller] == 'frontend/information' && params[:action] == 'about') %>
+            <%= render partial: '/frontend/modules/schema/about' %>
+        <% elsif (params[:controller] == 'frontend/information' && params[:action] == 'contact') %>
+            <%= render partial: '/frontend/modules/schema/contact' %>
+        <% elsif (params[:controller] == 'frontend/information' && params[:action] == 'diary') %>
+            <%= render partial: '/frontend/modules/schema/diary' %>
+        <% elsif (params[:controller] == 'frontend/information' && params[:action] == 'faq') %>
+            <%= render partial: '/frontend/modules/schema/faq' %>
+        <% else %>
         <% end %>
     </head>
     <body <% if @class.present? %>class="<%= @class %>"<% end %>>

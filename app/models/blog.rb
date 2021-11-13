@@ -14,6 +14,10 @@ class Blog < ApplicationRecord
 		self.title
 	end
 
+	def get_title
+		self.title
+	end
+
 	def image_path(version = nil)
     if !version.nil?
       return self.image_url(version)
