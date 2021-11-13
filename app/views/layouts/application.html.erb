@@ -144,9 +144,9 @@
             <div class="clearfix"></div>
             <%= render partial: '/frontend/modules/footer' %>
         </div>
-        <%= render partial: '/frontend/modules/scroll_to_top' %>
+        <%= render partial: '/frontend/modules/scroll_to_top', cached: true %>
         <%= render partial: '/frontend/modules/social_button' %>
         <script>$(document).ready(function(){$(".user-support").click(function(n){$(".social-button-content").slideToggle()})});</script>
-        <%= render partial: '/frontend/modules/javascripts' %>
+        <%= render partial: '/frontend/modules/javascripts', cached: true %>
     </body>
 </html>
