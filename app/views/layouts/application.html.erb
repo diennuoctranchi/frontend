@@ -34,6 +34,28 @@
             <link rel="canonical" href="<%= request.url %>" />
         <% end %>
 
+        <% if (params[:controller] == 'frontend/home' && params[:action] == 'index') %>
+            <link rel="alternate" hreflang="vi-VN" href="https://diennuoctranchi.com/" />
+        <% elsif (params[:controller] == 'frontend/information' && params[:action] == 'about') %>
+            <link rel="alternate" hreflang="vi-VN" href="https://diennuoctranchi.com/gioi-thieu" />
+        <% elsif (params[:controller] == 'frontend/information' && params[:action] == 'contact') %>
+            <link rel="alternate" hreflang="vi-VN" href="https://diennuoctranchi.com/lien-he" />
+        <% elsif (params[:controller] == 'frontend/information' && params[:action] == 'diary') %>
+            <link rel="alternate" hreflang="vi-VN" href="https://diennuoctranchi.com/nhat-ky-cong-viec" />
+        <% elsif (params[:controller] == 'frontend/information' && params[:action] == 'faq') %>
+            <link rel="alternate" hreflang="vi-VN" href="https://diennuoctranchi.com/cau-hoi-thuong-gap" />
+        <% elsif (params[:controller] == 'frontend/service' && params[:action] == 'list') %>
+            <link rel="alternate" hreflang="vi-VN" href="https://diennuoctranchi.com<%= service_list_link(@service_category) %>" />
+        <% elsif (params[:controller] == 'frontend/service' && params[:action] == 'detail') %>
+            <link rel="alternate" hreflang="vi-VN" href="<%= service_detail_link(@service) %>" />
+        <% elsif (params[:controller] == 'frontend/blog' && params[:action] == 'list') %>
+            <link rel="alternate" hreflang="vi-VN" href="https://diennuoctranchi.com/chia-se-kinh-nghiem" />
+        <% elsif (params[:controller] == 'frontend/blog' && params[:action] == 'detail') %>
+            <link rel="alternate" hreflang="vi-VN" href="https://diennuoctranchi.com<%= blog_detail_link(@blog) %>" />
+        <% else %>
+            <link rel="alternate" hreflang="vi-VN" href="<%= request.url %>" />
+        <% end %>
+
         <link rel='dns-prefetch' href='//fonts.googleapis.com' />
         <link rel='dns-prefetch' href='//s.w.org' />
         <link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
