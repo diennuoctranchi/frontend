@@ -64,12 +64,7 @@
                                         <% @service_categories.each do |service_category| %>
                                             <% if service_category.children.count > 0 %>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown">
-                                                    <% if service_category.services.count == 1 %>
-                                                        <% service = service_category.services.first %>
-                                                        <%= link_to service_category.get_name, service_detail_link(service), title: service_category.get_name, data: {toggle: 'dropdown1', scroll: '', options: 'easing:easeOutQuart'}, aria: {expanded: false}, class: 'hvr-underline-from-left1' %>
-                                                    <% else %>
-                                                        <%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name, data: {toggle: 'dropdown1', scroll: '', options: 'easing:easeOutQuart'}, aria: {expanded: false}, class: 'hvr-underline-from-left1' %>
-                                                    <% end %>
+                                                    <%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name, data: {toggle: 'dropdown1', scroll: '', options: 'easing:easeOutQuart'}, aria: {expanded: false}, class: 'hvr-underline-from-left1' %>
                                                     <ul role="menu" class="submenu">
                                                         <% service_category.get_children_categories.each do |child_service_category| %>
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page">
@@ -85,12 +80,7 @@
                                                 </li>
                                             <% else %>
                                                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                                                    <% if service_category.services.count == 1 %>
-                                                        <% service = service_category.services.first %>
-                                                        <%= link_to service_category.get_name, service_detail_link(service), title: service_category.get_name, data: {scroll: '', options: 'easing:easeOutQuart'}, class: 'hvr-underline-from-left1' %>
-                                                    <% else %>
-                                                        <%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name, data: {scroll: '', options: 'easing:easeOutQuart'}, class: 'hvr-underline-from-left1' %>
-                                                    <% end %>
+                                                    <%= link_to service_category.get_name, service_list_link(service_category), title: service_category.get_name, data: {toggle: 'dropdown1', scroll: '', options: 'easing:easeOutQuart'}, aria: {expanded: false}, class: 'hvr-underline-from-left1' %>
                                                 </li>
                                             <% end %>
                                         <% end %>
