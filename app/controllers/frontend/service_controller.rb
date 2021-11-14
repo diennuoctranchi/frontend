@@ -8,7 +8,7 @@ module Frontend
             @page_title = @service_category.get_title
             @meta_description = @service_category.get_meta_description
 
-            @services = Kaminari.paginate_array(@service_category.get_services_for_service_categories(params)).page(params[:page]).per(1)
+            @services = Kaminari.paginate_array(@service_category.get_services_for_service_categories(params)).page(params[:page]).per(5)
 
             if @service_category.parent_id.present?
                 @parent_service_category = @service_category.parent
