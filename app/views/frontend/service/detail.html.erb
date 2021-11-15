@@ -10,12 +10,7 @@
                     </li>
                     <% if @service.service_category.parent_id.present? %>
                         <li class="breadcrumb-item">
-                            <% if @parent_service_category.services.count == 1 %>
-                                <% service = @parent_service_category.services.first %>
-                                <%= link_to @parent_service_category.get_name, service_detail_link(service), title: @parent_service_category.get_name %>
-                            <% else %>
-                                <%= link_to @parent_service_category.get_name, service_list_link(@parent_service_category), title: @parent_service_category.get_name %>
-                            <% end %>
+                            <%= link_to @parent_service_category.get_name, service_list_link(@parent_service_category), title: @parent_service_category.get_name %>
                         </li>
                     <% end %>
                     <li class="breadcrumb-item">
