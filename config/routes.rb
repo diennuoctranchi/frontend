@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/lien-he' => 'frontend/information#contact', as: :contact_us
 
   get '/nhat-ky-cong-viec' => 'frontend/information#diary', as: :diary
-  get '/nhat-ky-nhat-ky/:title-cid:id(/:thumb)' => 'diaries#image', as: :diary_icon
+  get '/hinh-anh-nhat-ky-cong-viec/:title-cid:id(/:thumb)' => 'diaries#image', as: :diary_icon
 
   get '/cau-hoi-thuong-gap' => 'frontend/information#faq', as: :faq
 
