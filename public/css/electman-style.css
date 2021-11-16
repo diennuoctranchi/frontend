@@ -3344,7 +3344,7 @@ img.lazy-image.loaded {
   color: #8c8c8c;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin: 0 0 10px;
+  margin: 0 0 5px;
   font-weight: 600;
 }
 .sec-title.hydro-theme .upper-text {
@@ -7301,7 +7301,7 @@ img.lazy-image.loaded {
 .service-block-four .inner-box {
   position: relative;
   display: block;
-  padding: 20px;
+  padding: 10px;
   background: #fff;
   outline: 3px solid transparent;
   outline-offset: -3px;
@@ -10671,7 +10671,7 @@ img.lazy-image.loaded {
   position: relative;
 }
 .service-details .service-title {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 .service-details .details-inner {
   position: relative;
