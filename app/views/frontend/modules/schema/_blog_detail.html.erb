@@ -55,10 +55,10 @@
 <meta property="og:url" content="https://diennuoctranchi.com<%= blog_detail_link(@blog) %>">
 <meta property="og:description" content="<%= @meta_description.html_safe %>">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://diennuoctranchi.com/img/banner-share.jpg">
+<% if @blog.image.present? %><meta property="og:image" content="https://diennuoctranchi.com/<%= @blog.blog_image(:detail_1920x750) %>"><% else %><meta property="og:image" content="https://diennuoctranchi.com/img/banner-share.jpg"><% end %>
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@diennuoctranchi">
 <meta name="twitter:title" content="<%= @page_title.html_safe %>">
 <meta name="twitter:description" content="<%= @meta_description.html_safe %>">
-<meta name="twitter:image" content="https://diennuoctranchi.com/img/banner-share.jpg">
+<% if @blog.image.present? %><meta name="twitter:image" content="https://diennuoctranchi.com/<%= @blog.blog_image(:detail_1920x750) %>"><% else %><meta name="twitter:image" content="https://diennuoctranchi.com/img/banner-share.jpg"><% end %>
